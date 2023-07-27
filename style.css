@@ -3,11 +3,9 @@ title {
     font-family: 'Helvetica Neue', sans-serif;
     font-size: 50px;
     font-weight: 150;
-    letter-spacing: 2px;
-    line-height: 1;
+    letter-spacing: 1px;
+    line-height: 1.5;
     text-align: center;
-    background-color: rgb(150, 198, 240);
-    padding: 20px;
 }
 
 label,
