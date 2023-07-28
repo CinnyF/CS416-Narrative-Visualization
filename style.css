@@ -1,8 +1,3 @@
-* {
-    padding: 0;
-    margin: 0;
-}
-
 h1 {
     color: #111;
     font-family: impact;
@@ -23,14 +18,50 @@ p {
     text-align: center;
 }
 
-.container {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
+.overlay {
+    fill: none;
+    pointer-events: all;
 }
 
-.pages {
-    display: flex;
-    width: 400%;
-    box-sizing: border-box;
+.focus circle {
+    fill: none;
+    fill: steelblue;
+}
+
+.focus text {
+    font-size: 14px;
+}
+
+.tooltip {
+    fill: white;
+    stroke: #000;
+}
+
+.tooltip-date, .tooltip-likes {
+    font-weight: bold;
+}
+
+.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 2px;
+}
+
+path { 
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+}
+
+.dot {
+    fill: #000000;
+    stroke: #fff;
+}
+
+.ticks path {stroke:darkgray;opacity:0.3} 
+
+.content {
+    max-width: 800px;
+    margin: auto;
+    background-color:whitesmoke;
 }
