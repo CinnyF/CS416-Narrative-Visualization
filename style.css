@@ -17,24 +17,3 @@ p {
     line-height: 1.5;
     text-align: center;
 }
-
-.slider {
-    position: relative;
-    width:80%;
-    height:350px;
-    overflow: hidden;
-    margin: 30px auto;
-    border:1px solid orange;
-}
-
-.slider_nav {
-    text-align: center;
-    border: 10px solid green;
-    width:150px;
-    margin: 0 auto;
-}
-
-.slider_nav span {
-    cursor:pointer;
-}
-
