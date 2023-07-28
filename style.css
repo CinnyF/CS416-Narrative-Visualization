@@ -8,8 +8,7 @@ h1 {
     text-align: center;
 }
 
-label,
-text, a {
+p {
     color: #111;
     font-family: "Gill Sans", sans-serif;
     font-size: 15px;
