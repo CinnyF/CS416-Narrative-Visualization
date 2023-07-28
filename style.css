@@ -10,7 +10,7 @@
 }
 
 .pages {
-    display: inline-flex;
+    display: flex;
     height: 400%;
     box-sizing: border-box;
 }
