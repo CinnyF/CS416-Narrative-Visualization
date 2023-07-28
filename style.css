@@ -1,19 +1,4 @@
-* {
-    padding: 0;
-    margin: 0;
-}
 
-.container {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.pages {
-    display: flex;
-    width: 400%;
-    box-sizing: border-box;
-}
 
 
 h1 {
@@ -24,12 +9,6 @@ h1 {
     letter-spacing: 1px;
     line-height: 1.5;
     text-align: center;
-}
-
-h2 {
-    color: #111;
-    font-family: impact;
-    font-size: 15px;
 }
 
 p {
