@@ -1,46 +1,32 @@
 <html>
-  <meta http-equiv='cache-control' content='no-cache'> 
-  <meta http-equiv='expires' content='0'> 
-  <meta http-equiv='pragma' content='no-cache'>
-  
-  <head>
-    <h1>COVID-19 Cases in the United States</h1>
-    <link href="style.css" rel="stylesheet" type="text/css">
-    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-
-    <div>
-      <div>
-        <p>
-          COVID-19 Cases in the United States!<br>
-          COVID-19 Cases in the United States!<br>
-        </p>
+  <div class="container">
+    <div class="pages">
+      <div class="page one">
+        <h1>PAGE 1</h1>
+        <div>
+          <button onClick="slide('next')">Next</button>
+        </div>
       </div>
-    </div>
-  </head>
-
-  <body>
-    <div class="container">
-      <div class="pages">
-        <div class="page_one">
-          <h2>Page 1</h2>
-          <div>
-            <button onclick="slide("next")">Next</button>
-          <div> 
+      <div class="page two">
+        <h1>PAGE 2</h1>
+        <div>
+          <button onClick="slide('prev')">Previous</button>
+          <button onClick="slide('next')">Next</button>
         </div>
-        <div class="page_two">
-          <h2>Page 2</h2>
-          <div>
-            <button onclick="slide("prev")">Previous</button>
-            <button onclick="slide("next")">Next</button>
-          <div> 
+      </div>
+      <div class="page three">
+        <h1>PAGE 3</h1>
+        <div>
+          <button onClick="slide('prev')">Previous</button>
+          <button onClick="slide('next')">Next</button>
         </div>
-        <div class="page_three">
-          <h2>Page 3</h2>
-          <div>
-            <button onclick="slide("prev")">Previous</button>
-          <div>
+      </div>
+      <div class="page four">
+        <h1>PAGE 4</h1>
+        <div>
+          <button onClick="slide('prev')">Previous</button>
         </div>
       </div>
     </div>
-  </body>
+  </div>
 </html>
