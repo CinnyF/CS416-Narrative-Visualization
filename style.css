@@ -1,6 +1,6 @@
 h1 {
     color: #111;
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: impact;
     font-size: 30px;
     font-weight: 150;
     letter-spacing: 1px;
@@ -11,7 +11,7 @@ h1 {
 label,
 text, a {
     color: #111;
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: "Gill Sans", sans-serif;
     font-size: 15px;
     font-weight: 150;
     letter-spacing: 1px;
