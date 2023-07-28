@@ -8,7 +8,7 @@ $("#to_step3").click(function() {
     show('#step3');
 })
 
-$("#startover").click(function() {
+$("#start_over").click(function() {
     hide("#step3");
     show("#step1");
 })
