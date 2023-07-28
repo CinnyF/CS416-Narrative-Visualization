@@ -17,3 +17,15 @@ p {
     line-height: 1.5;
     text-align: center;
 }
+
+.container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.pages {
+    display: flex;
+    width: 400%;
+    box-sizing: border-box;
+}
