@@ -1,5 +1,11 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
 h1 {
-    color: #111;
+    color: #DC143C;
     font-family: impact;
     font-size: 30px;
     font-weight: 150;
