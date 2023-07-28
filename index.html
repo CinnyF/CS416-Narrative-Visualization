@@ -1,52 +1,46 @@
-<!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="style.css" rel="stylesheet" type="text/css">
+  <meta http-equiv='cache-control' content='no-cache'> 
+  <meta http-equiv='expires' content='0'> 
+  <meta http-equiv='pragma' content='no-cache'>
+  
+  <head>
+    <h1>COVID-19 Cases in the United States</h1>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
+    <div>
+      <div>
+        <p>
+          COVID-19 Cases in the United States!<br>
+          COVID-19 Cases in the United States!<br>
+        </p>
+      </div>
+    </div>
+  </head>
 
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
-
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  background-color: #111;
-  color: black;
-}
-
-.topnav a.active {
-  background-color: #C23C31;
-  color: white;
-}
-</style>
-</head>
-<body>
-
-<div class="topnav">
-  <a class="active" href="#page-one">PAGE 1</a>
-  <a href="#page-two">PAGE 2</a>
-  <a href="#page-three">PAGE 3</a>
-</div>
-
-<div style="padding-left:16px">
-  <h1>COVID-19 Cases in the United States</h1>
-  <p>Some content..</p>
-</div>
-
-</body>
+  <body>
+    <div class="container">
+      <div class="pages">
+        <div class="page_one">
+          <h2>Page 1</h2>
+          <div>
+            <button onclick="slide("next")">Next</button>
+          <div> 
+        </div>
+        <div class="page_two">
+          <h2>Page 2</h2>
+          <div>
+            <button onclick="slide("prev")">Previous</button>
+            <button onclick="slide("next")">Next</button>
+          <div> 
+        </div>
+        <div class="page_three">
+          <h2>Page 3</h2>
+          <div>
+            <button onclick="slide("prev")">Previous</button>
+          <div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
