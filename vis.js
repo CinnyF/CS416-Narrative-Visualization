@@ -12,3 +12,12 @@ $("#startover").click(function() {
     hide("#step3");
     show("#step1");
 })
+
+// utility functions
+function show(step){
+    $(step).show();
+}
+
+function hide(step){
+    $(step).hide();
+}
