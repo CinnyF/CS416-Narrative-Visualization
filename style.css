@@ -1,1 +1,19 @@
+h1 {
+    color: #C23C31;
+    font-family: impact;
+    font-size: 50px;
+    font-weight: 150;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    text-align: center;
+}
 
+p {
+    color: #111;
+    font-family: "Gill Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 150;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    text-align: center;
+}
