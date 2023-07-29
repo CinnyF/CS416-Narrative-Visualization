@@ -23,21 +23,64 @@ const width = 1100;
 const height = 450;
 const margin = 50;
 
-d3.csv("ALL_DATA_filled_organized_2020.csv", function(d) {
-  console.log(d.Province_State);
-  return {
-    year: new Date(d.Date), // convert "Date" column to Date
-    province_state: d.Province_State,
-    confirmed: +d.Confirmed, // convert "Confirmed" column to number
-    deaths: +d.Deaths // convert "Deaths" column to number
-  };
-}, function(error, rows) {
-  console.log(rows);
-});
+
+
+
+
 
 var x = d3.scaleBand().domain(states).range([0, width]);
 var y = d3.scaleLinear().domain(texty).range([height, 0]);
-d3.select('svg').append('g').attr('transform','translate('+margin+','+margin+')').call(d3.axisLeft(y));
+
+// function init(date) {
+//     data = await d3.csv("ALL_DATA_filled_organized_2020.csv");
+
+//     d3.select('svg')
+//     .append('g')
+//     .attr('transform','translate('+margin+','+margin+')')
+//     .call(d3.axisLeft(y).tickValues([50,500,5000,50000,500000,5000000]).tickFormat(d3.format('~s')))
+//     .selectAll("text")
+//         .style("font-size", 8)
+//         .text('Number of Cases');
+    
+//     d3.select('svg')
+//     .append('g')
+//     .attr('transform','translate('+margin+','+(height+margin)+')')
+//     .call(d3.axisBottom(x))
+//     .selectAll("text") 
+//         .attr("transform", "translate(-10,10)rotate(-90)")
+//         .style("text-anchor", "end")
+//         .style("font-size", 8)
+//         .text('State');
+// }
+
+
+
+
+
+
+
+// d3.csv("ALL_DATA_filled_organized_2020.csv", function(d) {
+//   console.log(d.Province_State);
+//   return {
+//     year: new Date(d.Date), // convert "Date" column to Date
+//     province_state: d.Province_State,
+//     confirmed: +d.Confirmed, // convert "Confirmed" column to number
+//     deaths: +d.Deaths // convert "Deaths" column to number
+//   };
+// }, function(error, rows) {
+//   console.log(rows);
+// });
+
+// var x = d3.scaleBand().domain(states).range([0, width]);
+// var y = d3.scaleLinear().domain(texty).range([height, 0]);
+// d3.select('svg').append('g').attr('transform','translate('+margin+','+margin+')').call(d3.axisLeft(y));
+d3.select('svg')
+    .append('g')
+    .attr('transform','translate('+margin+','+margin+')')
+    .call(d3.axisLeft(y).tickValues([50,500,5000,50000,500000,5000000]).tickFormat(d3.format('~s')))
+    .selectAll("text")
+        .style("font-size", 8)
+        .text('Number of Cases');
 d3.select('svg')
     .append('g')
     .attr('transform','translate('+margin+','+(height+margin)+')')
