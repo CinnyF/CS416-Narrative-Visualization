@@ -49,6 +49,10 @@ var y = d3.scaleLinear().domain([0, 23847]).range([height, 0]);
 //             .style("font-size", 8);
 async function init(date) {
     data = await d3.csv("ALL_DATA_filled_organized_2020.csv");
+    data.forEach(function(d){d['Confirmed'] = +d['Confirmed']; 
+                                 if(d['Confirmed'] !== d['Confirmed']){
+                                     d['Confirmed'] = 0;
+                                 }}); 
 
     var x = d3.scaleBand()
         .range([0, width])
@@ -57,8 +61,8 @@ async function init(date) {
     
     var y = d3.scaleLog()
         .range([height, 0])
-        .domain([0, d3.max(data, function(d) { return +d.Confirmed; })]);
-    console.log(d3.max(data, function(d) { return +d.Confirmed; }))
+        .domain([0, d3.max(data, function(d) { return d.Confirmed; })]);
+    console.log(d3.max(data, function(d) { return d.Confirmed; }))
 
     // var svg = d3.select('svg')
     //     .append('g')
@@ -91,7 +95,7 @@ async function init(date) {
         .attr("x", function(d) { return x(d.Province_State); })
         .attr("width", x.bandwidth())
         .attr("y", function(d) {console.log(y(d.Confirmed)); return y(d.Confirmed); })
-        .attr("height", function(d) { return y(height - (+d.Confirmed)); });
+        .attr("height", function(d) { return y(height - d.Confirmed); });
 }
 
 
