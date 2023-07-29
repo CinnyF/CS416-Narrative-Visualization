@@ -11,16 +11,16 @@ slide = (direction) => {
 
 var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
-output.innerHTML = slider.value;
+output.innerHTML = "2020-05-12";
 
 slider.oninput = function() {
-  output.innerHTML = this.value;
+  output.innerHTML = calculate_date(this.value);
 }
 
 const states = ["Alabama", "Alaska", "American Samoa", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Diamond Princess", "District of Columbia", "Florida", "Georgia", "Grand Princess", "Guam", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Northern Mariana Islands", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Puerto Rico", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virgin Islands", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
 const texty = [1,10,100,1000,10000,100000,1000000]
 const width = 1000;
-const height = 100;
+const height = 300;
 const margin = 50;
 
 
@@ -90,6 +90,42 @@ d3.select('svg')
         .style("font-size", 8);
 
 
+
+
+
+function calculate_date(num) {
+  const initial_str = "2020-04-12";
+  // const initial_day = initial_str.split('/')[2];
+  var res_date;
+  if (Number(num) >= 0 && Number(num) <= 19) {
+    res_date = "2020-04-" + (Number(12) + Number(num)).toString()
+  }
+  else if (Number(num) >= 20 && Number(num) <= 50) {
+    res_date = "2020-05-" + (Number(1) + Number(num) - Number(20)).toString()
+  }
+  else if (Number(num) >= 51 && Number(num) <= 80) {
+    res_date = "2020-06-" + (Number(1) + Number(num) - Number(51)).toString()
+  }
+  else if (Number(num) >= 81 && Number(num) <= 111) {
+    res_date = "2020-07-" + (Number(1) + Number(num) - Number(81)).toString()
+  }
+  else if (Number(num) >= 112 && Number(num) <= 142) {
+    res_date = "2020-08-" + (Number(1) + Number(num) - Number(112)).toString()
+  }
+  else if (Number(num) >= 143 && Number(num) <= 172) {
+    res_date = "2020-09-" + (Number(1) + Number(num) - Number(143)).toString()
+  }
+  else if (Number(num) >= 173 && Number(num) <= 203) {
+    res_date = "2020-10-" + (Number(1) + Number(num) - Number(173)).toString()
+  }
+  else if (Number(num) >= 204 && Number(num) <= 233) {
+    res_date = "2020-11-" + (Number(1) + Number(num) - Number(204)).toString()
+  }
+  else {
+    res_date = "2020-12-" + (Number(1) + Number(num) - Number(234)).toString()
+  }
+  return res_date;
+}
 
 
 // async function init(type) {
