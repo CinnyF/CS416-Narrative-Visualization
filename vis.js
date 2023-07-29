@@ -55,12 +55,9 @@ async function init(date) {
         .domain(data.map(function(d) { return d.Province_State; }))
         .padding(0.2);
     
-    
-
     var y = d3.scaleLinear()
         .range([height, 0])
         .domain([0, 2384720]);
-    console.log(d3.max(data, function(d) { return d.Confirmed; }));
 
     var svg = d3.select('svg')
         .append('g')
@@ -86,7 +83,7 @@ async function init(date) {
         .attr("class", "bar")
         .attr("x", function(d) { return x(d.Province_State); })
         .attr("width", x.bandwidth())
-        .attr("y", function(d) {console.log(d.Confirmed); return y(d.Confirmed); })
+        .attr("y", function(d) {console.log(y(d.Confirmed)); return y(d.Confirmed); })
         .attr("height", function(d) { return y(height - d.Confirmed); });
 }
 
