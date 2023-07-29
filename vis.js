@@ -51,7 +51,7 @@ async function init(date) {
     data = await d3.csv("ALL_DATA_filled_organized_2020_AS.csv");
     
     const cleanData = data.map((d) => ({
-         Confirmed: +d[Confirmed]
+         Confirmed: +d.Confirmed
     }));
     var filteredData = cleandata.filter(function(d) { return d.Date == '05-12-2020'; });
     console.log(filteredData.Confirmed)
