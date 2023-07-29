@@ -48,11 +48,8 @@ var y = d3.scaleLinear().domain([0, 23847]).range([height, 0]);
 //             .style("text-anchor", "end")
 //             .style("font-size", 8);
 async function init(date) {
-    data = await d3.csv("ALL_DATA_filled_organized_2020.csv");
-    data.forEach(function(d){d['Confirmed'] = +d['Confirmed']; 
-                                 if(d['Confirmed'] !== d['Confirmed']){
-                                     d['Confirmed'] = 0;
-                                 }}); 
+    data = await d3.csv("ALL_DATA_filled_organized_2020_AS.csv");
+    data.forEach(function(d){d['Confirmed'] = +d['Confirmed'];});
 
     var x = d3.scaleBand()
         .range([0, width])
