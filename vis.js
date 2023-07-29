@@ -52,7 +52,7 @@ async function init(date) {
     
     const cleanData = data.map((d) => ({
          Confirmed: +d[Confirmed]
-    });
+    }));
     var filteredData = cleandata.filter(function(d) { return d.Date == '05-12-2020'; });
     console.log(filteredData.Confirmed)
 
