@@ -49,7 +49,7 @@ const margin = 50;
 //             .style("font-size", 8);
 async function init(date) {
     data = await d3.csv("ALL_DATA_filled_organized_2020_AS.csv");
-    
+    console.log(data.Confirmed)
     const cleanData = data.map((d) => ({
         Province_State: d.Province_State,
         Date: d.Date,
