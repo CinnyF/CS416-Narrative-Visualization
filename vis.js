@@ -84,7 +84,7 @@ async function init(date) {
         .attr("class", "bar")
         .attr("x", function(d) { return x(d.Province_State); })
         .attr("width", x.bandwidth())
-        .attr("y", function(d) {console.log(y(d.Confirmed)); return y(d.Confirmed); })
+        .attr("y", function(d) {console.log(d.Confirmed); return y(d.Confirmed); })
         .attr("height", function(d) { return y(height - d.Confirmed); });
 }
 
@@ -119,32 +119,72 @@ function calculate_date(num) {
   const initial_str = "2020-04-12";
   // const initial_day = initial_str.split('/')[2];
   var res_date;
-  if (Number(num) >= 0 && Number(num) <= 19) {
+  if (Number(num) >= 0 && Number(num) <= 18) {
     res_date = "2020-04-" + (Number(12) + Number(num)).toString()
   }
-  else if (Number(num) >= 20 && Number(num) <= 50) {
-    res_date = "2020-05-" + (Number(1) + Number(num) - Number(20)).toString()
+  else if (Number(num) >= 19 && Number(num) <= 49) {
+    if ((Number(1) + Number(num) - Number(19)) < 10) {
+      res_date = "2020-05-0" + (Number(1) + Number(num) - Number(19)).toString()
+    }
+    else {
+      res_date = "2020-05-" + (Number(1) + Number(num) - Number(19)).toString()
+    }
   }
-  else if (Number(num) >= 51 && Number(num) <= 80) {
-    res_date = "2020-06-" + (Number(1) + Number(num) - Number(51)).toString()
+  else if (Number(num) >= 50 && Number(num) <= 79) {
+    if ((Number(1) + Number(num) - Number(50)) < 10) {
+      res_date = "2020-06-0" + (Number(1) + Number(num) - Number(50)).toString()
+    }
+    else {
+      res_date = "2020-06-" + (Number(1) + Number(num) - Number(50)).toString()
+    }
   }
-  else if (Number(num) >= 81 && Number(num) <= 111) {
-    res_date = "2020-07-" + (Number(1) + Number(num) - Number(81)).toString()
+  else if (Number(num) >= 80 && Number(num) <= 110) {
+    if ((Number(1) + Number(num) - Number(80)) < 10) {
+      res_date = "2020-07-0" + (Number(1) + Number(num) - Number(80)).toString()
+    }
+    else {
+      res_date = "2020-07-" + (Number(1) + Number(num) - Number(80)).toString()
+    }
   }
-  else if (Number(num) >= 112 && Number(num) <= 142) {
-    res_date = "2020-08-" + (Number(1) + Number(num) - Number(112)).toString()
+  else if (Number(num) >= 111 && Number(num) <= 141) {
+    if ((Number(1) + Number(num) - Number(111)) < 10) {
+      res_date = "2020-08-0" + (Number(1) + Number(num) - Number(111)).toString()
+    }
+    else {
+      res_date = "2020-08-" + (Number(1) + Number(num) - Number(111)).toString()
+    }
   }
-  else if (Number(num) >= 143 && Number(num) <= 172) {
-    res_date = "2020-09-" + (Number(1) + Number(num) - Number(143)).toString()
+  else if (Number(num) >= 142 && Number(num) <= 171) {
+    if ((Number(1) + Number(num) - Number(142)) < 10) {
+      res_date = "2020-09-0" + (Number(1) + Number(num) - Number(142)).toString()
+    }
+    else {
+      res_date = "2020-09-" + (Number(1) + Number(num) - Number(142)).toString()
+    }
   }
-  else if (Number(num) >= 173 && Number(num) <= 203) {
-    res_date = "2020-10-" + (Number(1) + Number(num) - Number(173)).toString()
+  else if (Number(num) >= 172 && Number(num) <= 202) {
+    if ((Number(1) + Number(num) - Number(172)) < 10) {
+      res_date = "2020-10-0" + (Number(1) + Number(num) - Number(172)).toString()
+    }
+    else {
+      res_date = "2020-10-" + (Number(1) + Number(num) - Number(172)).toString()
+    }
   }
-  else if (Number(num) >= 204 && Number(num) <= 233) {
-    res_date = "2020-11-" + (Number(1) + Number(num) - Number(204)).toString()
+  else if (Number(num) >= 203 && Number(num) <= 232) {
+    if ((Number(1) + Number(num) - Number(203)) < 10) {
+      res_date = "2020-11-0" + (Number(1) + Number(num) - Number(203)).toString()
+    }
+    else {
+      res_date = "2020-11-" + (Number(1) + Number(num) - Number(203)).toString()
+    }
   }
   else {
-    res_date = "2020-12-" + (Number(1) + Number(num) - Number(234)).toString()
+    if ((Number(1) + Number(num) - Number(233)) < 10) {
+      res_date = "2020-12-0" + (Number(1) + Number(num) - Number(233)).toString()
+    }
+    else {
+      res_date = "2020-12-" + (Number(1) + Number(num) - Number(233)).toString()
+    }
   }
   return res_date;
 }
