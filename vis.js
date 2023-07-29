@@ -37,7 +37,7 @@ d3.select('svg')
 
 d3.csv("ALL_DATA_filled_organized_2020.csv", function(d) {
   return {
-    year: new Date(d.Date), // convert "Date" column to Date
+    // year: new Date(d.Date), // convert "Date" column to Date
     province_state: d.Province_State,
     confirmed: +d.Confirmed, // convert "Confirmed" column to number
     deaths: +d.Deaths // convert "Deaths" column to number
