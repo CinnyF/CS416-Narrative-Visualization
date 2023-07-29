@@ -56,7 +56,7 @@ async function init(date) {
         .padding(0.2);
 
     var y = d3.scaleLinear()
-        .range([0, height])
+        .range([height, 0])
         .domain([0, d3.max(data, function(d) { return d.Confirmed; })]);
 
     var svg = d3.select('svg')
@@ -83,7 +83,7 @@ async function init(date) {
         .attr("x", function(d) { return x(d.Province_State); })
         .attr("width", x.bandwidth())
         .attr("y", function(d) { return y(d.Confirmed); })
-        .attr("height", function(d) { return y(d.Confirmed); });
+        .attr("height", function(d) { return y(height - d.Confirmed); });
 }
 
 
