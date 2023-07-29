@@ -49,7 +49,9 @@ var y = d3.scaleLinear().domain([0, 23847]).range([height, 0]);
 //             .style("font-size", 8);
 async function init(date) {
     data = await d3.csv("ALL_DATA_filled_organized_2020_AS.csv");
+    
     data.forEach(function(d){d['Confirmed'] = +d['Confirmed'];});
+    var filteredData = data.filter(function(d) { return d.Date == '05-12-2020'; });
 
     var x = d3.scaleBand()
         .range([0, width])
@@ -58,8 +60,8 @@ async function init(date) {
     
     var y = d3.scaleLinear()
         .range([height, 0])
-        .domain([0, d3.max(data, function(d) { return d.Confirmed; })]);
-    console.log(d3.max(data, function(d) { return d.Confirmed; }))
+        .domain([0, d3.max(filteredData, function(d) { return d.Confirmed; })]);
+    console.log(d3.max(filteredData, function(d) { return d.Confirmed; }))
 
     // var svg = d3.select('svg')
     //     .append('g')
@@ -82,7 +84,6 @@ async function init(date) {
             .style("text-anchor", "end")
             .style("font-size", 8);
 
-    var filteredData = data.filter(function(d) { return d.Date == '05-12-2020'; });
     console.log(filteredData.Confirmed);
 
     svg.selectAll(".bar")
