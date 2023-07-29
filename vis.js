@@ -28,9 +28,9 @@ const margin = 50;
 
 
 
-var x = d3.scaleBand().domain(states).range([0, width]);
-//var y = d3.scaleLinear().domain(texty).range([height, 0]);
-var y = d3.scaleLinear().domain([0, 23847]).range([height, 0]);
+// var x = d3.scaleBand().domain(states).range([0, width]);
+// //var y = d3.scaleLinear().domain(texty).range([height, 0]);
+// var y = d3.scaleLinear().domain([0, 23847]).range([height, 0]);
 
 // async function init(date) {
 //     data = await d3.csv("ALL_DATA_filled_organized_2020.csv");
@@ -50,12 +50,15 @@ var y = d3.scaleLinear().domain([0, 23847]).range([height, 0]);
 async function init(date) {
     data = await d3.csv("ALL_DATA_filled_organized_2020_AS.csv");
     
-    data.forEach(function(d){d['Confirmed'] = +d['Confirmed'];});
-    var filteredData = data.filter(function(d) { return d.Date == '05-12-2020'; });
+    const cleanData = data.map((d) => ({
+         Confirmed: +d[Confirmed]
+    });
+    var filteredData = cleandata.filter(function(d) { return d.Date == '05-12-2020'; });
+    console.log(filteredData.Confirmed)
 
     var x = d3.scaleBand()
         .range([0, width])
-        .domain(data.map(function(d) { return d.Province_State; }))
+        .domain(filteredData.map(function(d) { return d.Province_State; }))
         .padding(0.2);
     
     var y = d3.scaleLinear()
