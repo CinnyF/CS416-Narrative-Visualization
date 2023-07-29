@@ -75,6 +75,7 @@ async function init(date) {
             .style("font-size", 8);
 
     var filteredData = data.filter(function(d) { return d.Date == '05-12-2020'; });
+    console.log(d.Confirmed)
 
     svg.selectAll(".bar")
         .data(filteredData)
