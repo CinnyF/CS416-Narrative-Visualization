@@ -26,7 +26,12 @@ const margin = 50;
 var x = d3.scaleBand().domain(states).range([0, width]);
 var y = d3.scaleLinear().domain(texty).range([height, 0]);
 d3.select('svg').append('g').attr('transform','translate('+margin+','+margin+')').call(d3.axisLeft(y));
-d3.select('svg').append('g').attr('transform','translate('+margin+','+margin+')').call(d3.axisBottom(x)).attr("transform", "rotate(-90)");
+d3.select('svg')
+    .append('g')
+    .attr('transform','translate('+margin+','+margin+')')
+    .call(d3.axisBottom(x))
+    .selectAll("text") 
+        .attr("transform", "rotate(-90)");
 
 
 
