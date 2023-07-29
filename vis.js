@@ -41,8 +41,10 @@ d3.csv("ALL_DATA_filled_organized_2020.csv", function(d) {
     province_state: d.Province_State,
     confirmed: +d.Confirmed, // convert "Confirmed" column to number
     deaths: +d.Deaths // convert "Deaths" column to number
+    console.log(province_state);
   };
 });
+console.log(confirmed);
 //        , function(error, rows) {
 //   console.log(rows);
 // });
