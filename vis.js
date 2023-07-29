@@ -59,7 +59,7 @@ async function init(date) {
 
     var y = d3.scaleLinear()
         .range([height, 0])
-        .domain([0, d3.max(data, function(d) { return d.Confirmed; })]);
+        .domain([0, 2384720]);
     console.log(d3.max(data, function(d) { return d.Confirmed; }));
 
     var svg = d3.select('svg')
