@@ -55,10 +55,12 @@ async function init(date) {
         .domain(data.map(function(d) { return d.Province_State; }))
         .padding(0.2);
     
+    
 
     var y = d3.scaleLinear()
         .range([height, 0])
         .domain([0, d3.max(data, function(d) { return d.Confirmed; })]);
+    console.log(d3.max(data, function(d) { return d.Confirmed; }));
 
     var svg = d3.select('svg')
         .append('g')
