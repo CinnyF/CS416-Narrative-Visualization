@@ -17,7 +17,7 @@ const margin = 50;
 
 var x = d3.scaleBand().domain(states).range([0, width]);
 var y = d3.scaleLinear().domain(texty).range([height, 0]);
-d3.select('svg').append('g').attr('transform','translate('+margin+','+margin+')').call(d3.axisLeft(y)).tickValues([1,10,100,1000,10000,100000,1000000]);
+d3.select('svg').append('g').attr('transform','translate('+margin+','+margin+')').call(d3.axisLeft(y)).tickValues([1,10,100,1000,10000,100000,1000000]).tickFormat(d3.format('~s'));
 d3.select('svg').append('g').attr('transform','translate('+margin+','+margin+')').call(d3.axisBottom(x)).attr("transform", "rotate(-90)");
 
 
