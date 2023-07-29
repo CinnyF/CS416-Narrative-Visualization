@@ -60,11 +60,17 @@ async function init(date) {
         .domain([0, d3.max(data, function(d) { return +d.Confirmed; })]);
     console.log(d3.max(data, function(d) { return +d.Confirmed; }))
 
+    // var svg = d3.select('svg')
+    //     .append('g')
+    //     .attr('transform','translate('+margin+','+margin+')');
+
+    // svg.append('g')
+    //    .call(d3.axisLeft(y).tickFormat(d3.format('~s')));
+
     var svg = d3.select('svg')
-        .append('g')
-        .attr('transform','translate('+margin+','+margin+')');
 
     svg.append('g')
+       .attr('transform','translate('+margin+','+margin+')');
        .call(d3.axisLeft(y).tickFormat(d3.format('~s')));
 
     svg.append('g')
