@@ -54,6 +54,7 @@ async function init(date) {
         .range([0, width])
         .domain(data.map(function(d) { return d.Province_State; }))
         .padding(0.2);
+    
 
     var y = d3.scaleLinear()
         .range([height, 0])
@@ -75,7 +76,7 @@ async function init(date) {
             .style("font-size", 8);
 
     var filteredData = data.filter(function(d) { return d.Date == '05-12-2020'; });
-    console.log(d.Confirmed)
+    console.log(filteredData.Confirmed)
 
     svg.selectAll(".bar")
         .data(filteredData)
