@@ -35,12 +35,12 @@
       </div>
       <div class="page two">
         <h1>PAGE 2</h1>
-        <div id="slider">
-          <label for="date" style="display: inline-block; width: 240px; text-align: right">
-            Current Date is <span id="date-value">…</span>
-          </label>
-        </div>
 
+        <div class="slidecontainer">
+          <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+          <p>Value: <span id="demo"></span></p>
+        </div>
+        
         <svg id="scene2" width=1000 height=9000 style="border:solid;">
         </svg>
         <div>
