@@ -70,7 +70,7 @@ async function init(date) {
     var svg = d3.select('svg')
 
     svg.append('g')
-       .attr('transform','translate('+margin+','+margin+')');
+       .attr('transform','translate('+margin+','+margin+')')
        .call(d3.axisLeft(y).tickFormat(d3.format('~s')));
 
     svg.append('g')
