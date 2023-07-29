@@ -26,16 +26,14 @@ const margin = 50;
 d3.csv("ALL_DATA_filled_organized_2020.csv", function(d) {
   console.log(d.Province_State);
   return {
-    // year: new Date(d.Date), // convert "Date" column to Date
+    year: new Date(d.Date), // convert "Date" column to Date
     province_state: d.Province_State,
     confirmed: +d.Confirmed, // convert "Confirmed" column to number
     deaths: +d.Deaths // convert "Deaths" column to number
   };
+}, function(error, rows) {
+  console.log(rows);
 });
-console.log(confirmed);
-//        , function(error, rows) {
-//   console.log(rows);
-// });
 
 var x = d3.scaleBand().domain(states).range([0, width]);
 var y = d3.scaleLinear().domain(texty).range([height, 0]);
