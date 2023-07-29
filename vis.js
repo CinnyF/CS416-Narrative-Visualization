@@ -51,9 +51,11 @@ async function init(date) {
     data = await d3.csv("ALL_DATA_filled_organized_2020_AS.csv");
     
     const cleanData = data.map((d) => ({
-         Confirmed: +d.Confirmed
+        Province_State: d.Province_State,
+        Date: d.Date,
+        Confirmed: +d.Confirmed
     }));
-    var filteredData = cleandata.filter(function(d) { return d.Date == '05-12-2020'; });
+    var filteredData = cleanData.filter(function(d) { return d.Date == '05-12-2020'; });
     console.log(filteredData.Confirmed)
 
     var x = d3.scaleBand()
