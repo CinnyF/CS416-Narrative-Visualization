@@ -28,7 +28,7 @@ var y = d3.scaleLinear().domain(texty).range([height, 0]);
 d3.select('svg').append('g').attr('transform','translate('+margin+','+margin+')').call(d3.axisLeft(y));
 d3.select('svg')
     .append('g')
-    .attr('transform','translate('+margin+','+margin+')')
+    .attr('transform','translate('+margin+','+(height+margin)+')')
     .call(d3.axisBottom(x))
     .selectAll("text") 
         .attr("transform", "translate(-10,10)rotate(-90)")
