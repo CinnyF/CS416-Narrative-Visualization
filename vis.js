@@ -104,6 +104,7 @@ async function init(date) {
         .attr("class", "bar")
         .attr("x", function(d) { return x(d.Province_State); })
         .attr("y", function(d) {return y(0);})
+        .attr("width", x.bandwidth())
         .attr("height", function(d) { return height - y(d.Confirmed); });
 }
 
