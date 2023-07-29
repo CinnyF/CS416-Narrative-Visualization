@@ -19,7 +19,7 @@ slider.oninput = function() {
 
 const states = ["Alabama", "Alaska", "American Samoa", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Diamond Princess", "District of Columbia", "Florida", "Georgia", "Grand Princess", "Guam", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Northern Mariana Islands", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Puerto Rico", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virgin Islands", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
 const texty = [1,10,100,1000,10000,100000,1000000]
-const width = 500;
+const width = 900;
 const height = 500;
 const margin = 50;
 
@@ -31,7 +31,8 @@ d3.select('svg')
     .attr('transform','translate('+margin+','+margin+')')
     .call(d3.axisBottom(x))
     .selectAll("text") 
-        .attr("transform", "rotate(-90)");
+        .attr("transform", "translate(-10,10)rotate(-90)")
+        .style("text-anchor", "end");
 
 
 
