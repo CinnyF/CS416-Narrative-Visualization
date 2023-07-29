@@ -32,21 +32,58 @@ var x = d3.scaleBand().domain(states).range([0, width]);
 //var y = d3.scaleLinear().domain(texty).range([height, 0]);
 var y = d3.scaleLinear().domain([0, 20000]).range([height, 0]);
 
+// async function init(date) {
+//     data = await d3.csv("ALL_DATA_filled_organized_2020.csv");
+
+//     d3.select('svg')
+//         .append('g')
+//         .attr('transform','translate('+margin+','+margin+')')
+//        .call(d3.axisLeft(y).tickFormat(d3.format('~s')));
+//     d3.select('svg')
+//         .append('g')
+//         .attr('transform','translate('+margin+','+(height+margin)+')')
+//         .call(d3.axisBottom(x))
+//         .selectAll("text") 
+//             .attr("transform", "translate(-10,10)rotate(-90)")
+//             .style("text-anchor", "end")
+//             .style("font-size", 8);
 async function init(date) {
     data = await d3.csv("ALL_DATA_filled_organized_2020.csv");
-    
-    d3.select('svg')
+
+    var x = d3.scaleBand()
+        .range([0, width])
+        .domain(data.map(function(d) { return d.Province_State; }))
+        .padding(0.2);
+
+    var y = d3.scaleLinear()
+        .range([height, 0])
+        .domain([0, d3.max(data, function(d) { return d.Confirmed; })]);
+
+    var svg = d3.select('svg')
         .append('g')
-        .attr('transform','translate('+margin+','+margin+')')
+        .attr('transform','translate('+margin+','+margin+')');
+
+    svg.append('g')
        .call(d3.axisLeft(y).tickFormat(d3.format('~s')));
-    d3.select('svg')
-        .append('g')
+
+    svg.append('g')
         .attr('transform','translate('+margin+','+(height+margin)+')')
         .call(d3.axisBottom(x))
         .selectAll("text") 
             .attr("transform", "translate(-10,10)rotate(-90)")
             .style("text-anchor", "end")
             .style("font-size", 8);
+
+    var filteredData = data.filter(function(d) { return d.Date == '06-07-2020'; });
+
+    svg.selectAll(".bar")
+        .data(filteredData)
+        .enter().append("rect")
+        .attr("class", "bar")
+        .attr("x", function(d) { return x(d.Province _State); })
+        .attr("width", x.bandwidth())
+        .attr("y", function(d) { return y(d.Confirmed); })
+        .attr("height", function(d) { return height - y(d.Confirmed); });
 }
 
 
