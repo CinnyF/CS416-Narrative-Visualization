@@ -7,8 +7,8 @@ slide = (direction) => {
     direction === "next" ? translate -= translateAmount : translate += translateAmount;
     pages.forEach(
         pages => (pages.style.transform = `translateX(${translate}%)`)
-        console.log('swithed page')
     );
+    console.log('swithed page')
 }
 
 
