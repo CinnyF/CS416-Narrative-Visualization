@@ -80,7 +80,7 @@ async function init(date) {
         .data(filteredData)
         .enter().append("rect")
         .attr("class", "bar")
-        .attr("x", function(d) { return x(d.Province _State); })
+        .attr("x", function(d) { return x(d.Province_State); })
         .attr("width", x.bandwidth())
         .attr("y", function(d) { return y(d.Confirmed); })
         .attr("height", function(d) { return height - y(d.Confirmed); });
