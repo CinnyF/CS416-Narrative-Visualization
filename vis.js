@@ -80,14 +80,21 @@ async function init(date) {
     svg.append('g')
        .attr('transform','translate('+margin+','+margin+')')
        .call(d3.axisLeft(y).tickFormat(d3.format('~s')));
-
     svg.append('g')
-        .attr('transform','translate('+margin+','+(height+margin)+')')
+        .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text") 
             .attr("transform", "translate(-10,10)rotate(-90)")
             .style("text-anchor", "end")
             .style("font-size", 8);
+
+    // svg.append('g')
+    //     .attr('transform','translate('+margin+','+(height+margin)+')')
+    //     .call(d3.axisBottom(x))
+    //     .selectAll("text") 
+    //         .attr("transform", "translate(-10,10)rotate(-90)")
+    //         .style("text-anchor", "end")
+    //         .style("font-size", 8);
 
     console.log(filteredData.Confirmed);
 
@@ -96,7 +103,7 @@ async function init(date) {
         .enter().append("rect")
         .attr("class", "bar")
         .attr("x", function(d) { return x(d.Province_State); })
-        .attr("width", x.bandwidth())
+
         .attr("y", function(d) {return y(0);})
         .attr("height", function(d) { return height - y(d.Confirmed); });
 }
