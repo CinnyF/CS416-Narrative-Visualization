@@ -42,7 +42,7 @@ d3.csv("ALL_DATA_filled_organized_2020.csv", function(d) {
     confirmed: +d.Confirmed, // convert "Confirmed" column to number
     deaths: +d.Deaths // convert "Deaths" column to number
   };
-};
+});
 //        , function(error, rows) {
 //   console.log(rows);
 // });
