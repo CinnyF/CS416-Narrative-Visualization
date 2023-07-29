@@ -50,19 +50,19 @@ button:hover{
 }
 
 .one{
-  background: orangered;
+  background: #EDBE7F;
 }
 
 .two{
-  background-color: dodgerblue;
+  background-color: #7FC0ED;
 }
 
 .three{
-  background-color: indigo;
+  background-color: #F3AED1;
 }
 
 h1 {
-    color: #C23C31;
+    color: #111;
     font-family: impact;
     font-size: 50px;
     font-weight: 150;
