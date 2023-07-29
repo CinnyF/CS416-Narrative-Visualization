@@ -8,3 +8,7 @@ slide = (direction) => {
         pages => (pages.style.transform = `translateX(${translate}%)`)
     );
 }
+
+d3.csv("ALL_DATA_filled_update.csv", (d) => {
+    console.log(d)
+})
