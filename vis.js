@@ -33,6 +33,7 @@ d3.select('svg')
     .selectAll("text") 
         .attr("transform", "translate(-10,10)rotate(-90)")
         .style("text-anchor", "end");
+        .style("font-size", 8)
 
 
 
