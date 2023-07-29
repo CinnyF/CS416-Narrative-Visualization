@@ -35,6 +35,17 @@ d3.select('svg')
         .style("text-anchor", "end")
         .style("font-size", 8);
 
+// d3.csv("ALL_DATA_filled_update_v3.csv", function(d) {
+//   return {
+//     year: new Date(+d.Year, 0, 1), // convert "Year" column to Date
+//     make: d.Make,
+//     model: d.Model,
+//     length: +d.Length // convert "Length" column to number
+//   };
+// }, function(error, rows) {
+//   console.log(rows);
+// });
+
 
 
 // async function init(type) {
