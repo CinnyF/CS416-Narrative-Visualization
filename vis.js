@@ -30,7 +30,7 @@ const margin = 50;
 
 var x = d3.scaleBand().domain(states).range([0, width]);
 //var y = d3.scaleLinear().domain(texty).range([height, 0]);
-var y = d3.scaleLinear().domain([0, 2384720]).range([height, 0]);
+var y = d3.scaleLinear().domain([0, 23847]).range([height, 0]);
 
 // async function init(date) {
 //     data = await d3.csv("ALL_DATA_filled_organized_2020.csv");
@@ -57,7 +57,7 @@ async function init(date) {
     
     var y = d3.scaleLog()
         .range([height, 0])
-        .domain([0, 2384720]);
+        .domain([0, 23847]);
 
     var svg = d3.select('svg')
         .append('g')
