@@ -7,10 +7,10 @@ slide = (direction) => {
     direction === "next" ? translate -= translateAmount : translate += translateAmount;
     pages.forEach(
         pages => (pages.style.transform = `translateX(${translate}%)`)
+        console.log('swithed page')
     );
 }
 
-console.log("begin")
 
 d3.csv("ALL_DATA_filled_update.csv", function(data) {
     for (var i = 0; i < data.length; i++) {
