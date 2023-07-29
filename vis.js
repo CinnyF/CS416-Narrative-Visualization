@@ -36,7 +36,7 @@ var y = d3.scaleLinear().domain(texty).range([height, 0]);
 
 //     d3.select('svg')
 //     .append('g')
-//     .attr('transform','translate('+(width+margin)+','+margin+')')
+//     .attr('transform','translate('+margin+','+margin+')')
 //     .call(d3.axisLeft(y).tickValues([50,500,5000,50000,500000,5000000]).tickFormat(d3.format('~s')))
 //     .selectAll("text")
 //         .style("font-size", 8)
@@ -76,7 +76,7 @@ var y = d3.scaleLinear().domain(texty).range([height, 0]);
 // d3.select('svg').append('g').attr('transform','translate('+margin+','+margin+')').call(d3.axisLeft(y));
 d3.select('svg')
     .append('g')
-    .attr('transform','translate('+margin+','+margin+')')
+    .attr('transform','translate('+(width+margin)+','+margin+')')
     .call(d3.axisLeft(y).tickValues([50,500,5000,50000,500000,5000000]).tickFormat(d3.format('~s')))
     .selectAll("text")
         .style("font-size", 8)
