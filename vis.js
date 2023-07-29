@@ -55,7 +55,7 @@ async function init(date) {
         .domain(data.map(function(d) { return d.Province_State; }))
         .padding(0.2);
     
-    var y = d3.scaleLinear()
+    var y = d3.scaleLog()
         .range([height, 0])
         .domain([0, 2384720]);
 
