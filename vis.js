@@ -15,8 +15,8 @@ const height = 500;
 
 var x = d3.scaleBand().domain(states).range([0, width]);
 var y = d3.scaleLinear().domain(0,100).range([height, 0]);
-ds.select('svg').append('g').attr('transform','translate('+margin+','+margin+')').call(d3.axisLeft(y));
-ds.select('svg').append('g').attr('transform','translate('+margin+','+margin+')').call(d3.axisBottom(x));
+d3.select('svg').append('g').attr('transform','translate('+margin+','+margin+')').call(d3.axisLeft(y));
+d3.select('svg').append('g').attr('transform','translate('+margin+','+margin+')').call(d3.axisBottom(x));
 
 
 
