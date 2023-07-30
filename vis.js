@@ -72,6 +72,8 @@ async function init(date) {
 }
 
 async function update(date) {
+
+    d3.select("svg").remove()
     
     data = await d3.csv("ALL_DATA_filled_organized_2020_AS.csv");
     console.log(data['Confirmed'])
@@ -82,14 +84,35 @@ async function update(date) {
     }));
     
     var filteredData = cleanData.filter(function(d) { return d.Date == date; });
+
+    var x = d3.scaleBand()
+        .range([0, width])
+        .domain(filteredData.map(function(d) { return d.Province_State; }))
+        .padding(0.2);
     
-    d3.select("#demo").text(date);
-    d3.select("svg")
-    .select("g")
-    .selectAll("rect")
-    .remove()
-    .exit()
-    .data(filteredData)
+    var y = d3.scaleLinear()
+        .range([height, 0])
+        .domain([0, d3.max(filteredData, function(d) { return d.Confirmed; })]);
+    // console.log(d3.max(filteredData, function(d) { return d.Confirmed; }))
+    
+    var svg = d3.select('svg')
+
+    svg.append('g')
+       .attr('transform','translate('+margin+','+margin+')')
+       .call(d3.axisLeft(y).tickFormat(d3.format('~s')));
+
+    svg.append('g')
+        .attr('transform','translate('+margin+','+(height+margin)+')')
+        .call(d3.axisBottom(x))
+        .selectAll("text") 
+            .attr("transform", "translate(-10,10)rotate(-90)")
+            .style("text-anchor", "end")
+            .style("font-size", 8);
+
+    // console.log(filteredData.Confirmed);
+
+    svg.selectAll(".bar")
+        .data(filteredData)
         .enter().append("rect")
         .style("fill", "steelblue")
         .attr("class", "bar")
@@ -98,6 +121,22 @@ async function update(date) {
         .attr("width", x.bandwidth())
         .attr("height", function(d) { return height - y(d.Confirmed); })
         .attr('transform', 'translate(0,' + margin + ')');
+    
+    // d3.select("#demo").text(date);
+    // d3.select("svg")
+    // .select("g")
+    // .selectAll("rect")
+    // .remove()
+    // .exit()
+    // .data(filteredData)
+    //     .enter().append("rect")
+    //     .style("fill", "steelblue")
+    //     .attr("class", "bar")
+    //     .attr("x", function(d) {return x(d.Province_State) +  margin; })
+    //     .attr("y", function(d) {return y(d.Confirmed);})
+    //     .attr("width", x.bandwidth())
+    //     .attr("height", function(d) { return height - y(d.Confirmed); })
+    //     .attr('transform', 'translate(0,' + margin + ')');
 }
 
 
