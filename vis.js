@@ -72,15 +72,18 @@ async function init(date) {
 
     svg1.append('g')
        .attr('transform','translate('+margin+','+margin+')')
+       .style('fill', 'black')
        .call(d3.axisLeft(y1).tickFormat(d3.format('~s')));
 
     svg1.append('g')
         .attr('transform','translate('+margin+','+(height+margin)+')')
+        .style('fill', 'black')
         .call(d3.axisBottom(x1))
         .selectAll("text") 
             .attr("transform", "translate(-10,10)rotate(-90)")
             .style("text-anchor", "end")
             .style("font-size", 8);
+            .style('fill', 'black')
     
     svg1.append("text")
         .attr("class", "x axis")
@@ -88,6 +91,7 @@ async function init(date) {
         .attr("y",  height + margin + 130)
         .style("font-size", 13)
         .style("text-anchor", "middle")
+        .style('fill', 'black')
         .text("State");
     
     svg1.append("text")
@@ -99,6 +103,7 @@ async function init(date) {
         .style("font-size", 13)
         .style("text-anchor", "middle")
         .text("Number of Cases");
+        .style('fill', 'black')
 
     // console.log(filteredData.Confirmed);
 
