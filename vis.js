@@ -20,11 +20,8 @@ slider.oninput = function() {
 const states = ["Alabama", "Alaska", "American Samoa", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Diamond Princess", "District of Columbia", "Florida", "Georgia", "Grand Princess", "Guam", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Northern Mariana Islands", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Puerto Rico", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virgin Islands", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
 const texty = [1,10,100,1000,10000,100000,1000000]
 const width = 1100;
-const height = 500;
+const height = 450;
 const margin = 50;
-
-
-
 
 
 
@@ -47,6 +44,9 @@ const margin = 50;
 //             .attr("transform", "translate(-10,10)rotate(-90)")
 //             .style("text-anchor", "end")
 //             .style("font-size", 8);
+
+
+
 async function init(date) {
     data = await d3.csv("ALL_DATA_filled_organized_2020_AS.csv");
     console.log(data['Confirmed'])
@@ -55,7 +55,7 @@ async function init(date) {
         Date: d.Date,
         Confirmed: +d.Confirmed
     }));
-    var filteredData = cleanData.filter(function(d) { return d.Date == '2020-08-18'; });
+    var filteredData = cleanData.filter(function(d) { return d.Date == date; });
     console.log(filteredData)
 
     var x = d3.scaleBand()
@@ -68,6 +68,8 @@ async function init(date) {
         .domain([0, d3.max(filteredData, function(d) { return d.Confirmed; })]);
     console.log(d3.max(filteredData, function(d) { return d.Confirmed; }))
 
+
+    
     // var svg = d3.select('svg')
     //     .append('g')
     //     .attr('transform','translate('+margin+','+margin+')');
@@ -75,6 +77,8 @@ async function init(date) {
     // svg.append('g')
     //    .call(d3.axisLeft(y).tickFormat(d3.format('~s')));
 
+
+    
     var svg = d3.select('svg')
 
     svg.append('g')
