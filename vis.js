@@ -65,8 +65,10 @@ async function init(date) {
         .domain([0, d3.max(cleanData1, function(d) { return d.Confirmed; })]);
     // .domain([0, d3.max(filteredData, function(d) { return d.Confirmed; })]);
     // console.log(d3.max(filteredData, function(d) { return d.Confirmed; }))
+
+    // var confirmed_avg1 = d3.max(cleanData1, function(d) { return d.Confirmed; });
     
-    var svg1 = d3.select("#scene1")
+    var svg1 = d3.select("#scene1");
 
     svg1.append('g')
        .attr('transform','translate('+margin+','+margin+')')
@@ -110,6 +112,14 @@ async function init(date) {
         .attr("width", x1.bandwidth())
         .attr("height", function(d) { return height - y1(d.Confirmed); })
         .attr('transform', 'translate(0,' + margin + ')');
+
+    var confirmed_avg1 = d3.max(cleanData1, function(d) { return d.Confirmed; });
+    svg1.append("line")
+        .attr("x1", 0)
+        .attr("y1", confirmed_avg1)
+        .attr("x2", margin)
+        .attr("y2",confirmed_avg1)
+        .style("stroke", "black")
 
 
     
