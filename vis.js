@@ -131,7 +131,7 @@ async function init(date) {
         .attr("class", "x axis")
         .attr("x", width / 2 )
         .attr("y",  height + 20)
-        .style("font-size", 10);
+        .style("font-size", 10)
         .style("text-anchor", "middle")
         .text("State");
     
@@ -141,7 +141,7 @@ async function init(date) {
         .attr("y", 0 + 8)
         .attr("x",0 - (height / 2))
         .attr("dy", "1em")
-        .style("font-size", 10);
+        .style("font-size", 10)
         .style("text-anchor", "middle")
         .text("Number of Cases");
 
