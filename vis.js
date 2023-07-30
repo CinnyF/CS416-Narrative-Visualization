@@ -114,10 +114,10 @@ async function init(date) {
         .attr('transform', 'translate(0,' + margin + ')');
 
     var confirmed_avg1 = d3.mean(cleanData1, function(d) { return d.Confirmed; });
-    console.log("-------")
-    console.log(confirmed_avg1)
-    console.log(y1(confirmed_avg1))
-    console.log("-------")
+    // console.log("-------")
+    // console.log(confirmed_avg1)
+    // console.log(y1(confirmed_avg1))
+    // console.log("-------")
     svg1.append("line")
         .attr("x1", 0)
         .attr("y1", y1(confirmed_avg1) + margin)
@@ -188,6 +188,16 @@ async function init(date) {
         .attr("height", function(d) { return height - y2(d.Confirmed); })
         .attr('transform', 'translate(0,' + margin + ')');
 
+    var confirmed_avg2 = d3.mean(cleanData2, function(d) { return d.Confirmed; });
+    svg2.append("line")
+        .attr("x1", 0)
+        .attr("y1", y1(confirmed_avg2) + margin)
+        .attr("x2", width + margin * 2)
+        .attr("y2", y1(confirmed_avg2) + margin)
+        .style("stroke", "black")
+    
+
+    
     // SCENE 3
     data3 = await d3.csv("ALL_DATA_filled_organized_2022.csv");
     const cleanData3 = data3.map((d) => ({
@@ -248,6 +258,14 @@ async function init(date) {
         .attr("width", x3.bandwidth())
         .attr("height", function(d) { return height - y3(d.Confirmed); })
         .attr('transform', 'translate(0,' + margin + ')');
+
+    var confirmed_avg3 = d3.mean(cleanData3, function(d) { return d.Confirmed; });
+    svg3.append("line")
+        .attr("x1", 0)
+        .attr("y1", y1(confirmed_avg3) + margin)
+        .attr("x2", width + margin * 2)
+        .attr("y2", y1(confirmed_avg3) + margin)
+        .style("stroke", "black")
 }
 
 async function update1(date) {
@@ -319,6 +337,14 @@ async function update1(date) {
         .attr("width", x1.bandwidth())
         .attr("height", function(d) { return height - y1(d.Confirmed); })
         .attr('transform', 'translate(0,' + margin + ')');
+
+    var confirmed_avg1 = d3.mean(cleanData1, function(d) { return d.Confirmed; });
+    svg1.append("line")
+        .attr("x1", 0)
+        .attr("y1", y1(confirmed_avg1) + margin)
+        .attr("x2", width + margin * 2)
+        .attr("y2", y1(confirmed_avg1) + margin)
+        .style("stroke", "black")
     
     
     // data = await d3.csv("ALL_DATA_filled_organized_2020_AS.csv");
@@ -433,6 +459,14 @@ async function update2(date) {
         .attr("width", x2.bandwidth())
         .attr("height", function(d) { return height - y2(d.Confirmed); })
         .attr('transform', 'translate(0,' + margin + ')');
+
+    var confirmed_avg2 = d3.mean(cleanData2, function(d) { return d.Confirmed; });
+    svg2.append("line")
+        .attr("x1", 0)
+        .attr("y1", y1(confirmed_avg2) + margin)
+        .attr("x2", width + margin * 2)
+        .attr("y2", y1(confirmed_avg2) + margin)
+        .style("stroke", "black")
 }
 
 async function update3(date) {
@@ -498,6 +532,14 @@ async function update3(date) {
         .attr("width", x3.bandwidth())
         .attr("height", function(d) { return height - y3(d.Confirmed); })
         .attr('transform', 'translate(0,' + margin + ')');
+
+    var confirmed_avg3 = d3.mean(cleanData3, function(d) { return d.Confirmed; });
+    svg3.append("line")
+        .attr("x1", 0)
+        .attr("y1", y1(confirmed_avg3) + margin)
+        .attr("x2", width + margin * 2)
+        .attr("y2", y1(confirmed_avg3) + margin)
+        .style("stroke", "black")
 }
 
 
