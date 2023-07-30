@@ -82,8 +82,8 @@ async function init(date) {
         .selectAll("text") 
             .attr("transform", "translate(-10,10)rotate(-90)")
             .style("text-anchor", "end")
-            .style("font-size", 8);
-            .style('fill', 'black')
+            .style("font-size", 8)
+            .style('fill', 'black');
     
     svg1.append("text")
         .attr("class", "x axis")
