@@ -130,9 +130,18 @@ async function init(date) {
     svg1.append('text')
         .attr('x', width + margin)
         .attr('y', y1(confirmed_avg1) + margin)
-        // .text('average:')
-        .text(function(d) { return 'average: ' + '\n' + confirmed_avg1 + '\n' + 'cases' })
-        .style('font-size', '12')
+        .dy: -10
+        .text('average:')
+        .style('font-size', '10')
+        .style('text-anchor', 'start')
+        .style("fill", "white");
+
+    svg1.append('text')
+        .attr('x', width + margin)
+        .attr('y', y1(confirmed_avg1) + margin)
+        .dy: 10
+        .text(confirmed_avg1)
+        .style('font-size', '10')
         .style('text-anchor', 'start')
         .style("fill", "white");
 
