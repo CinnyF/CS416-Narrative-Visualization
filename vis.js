@@ -23,36 +23,36 @@ const height = 450;
 const margin = 50;
 
 async function init(date) {
-    data = await d3.csv("ALL_DATA_filled_organized_2020_AS.csv");
-    // console.log(data['Confirmed'])
-    const cleanData = data.map((d) => ({
+    data1 = await d3.csv("ALL_DATA_filled_organized_2020_AS.csv");
+    // console.log(data1['Confirmed'])
+    const cleanData1 = data1.map((d) => ({
         Province_State: d.Province_State,
         Date: d.Date,
         Confirmed: +d.Confirmed
     }));
-    var filteredData = cleanData.filter(function(d) { return d.Date == date; });
-    // console.log(filteredData)
+    var filteredData1 = cleanData1.filter(function(d) { return d.Date == date; });
+    // console.log(filteredData1)
 
-    var x = d3.scaleBand()
+    var x1 = d3.scaleBand()
         .range([0, width])
-        .domain(filteredData.map(function(d) { return d.Province_State; }))
+        .domain(filteredData1.map(function(d) { return d.Province_State; }))
         .padding(0.2);
     
-    var y = d3.scaleLinear()
+    var y1 = d3.scaleLinear()
         .range([height, 0])
-        .domain([0, d3.max(cleanData, function(d) { return d.Confirmed; })]);
-        // .domain([0, d3.max(filteredData, function(d) { return d.Confirmed; })]);
+        .domain([0, d3.max(cleanData1, function(d) { return d.Confirmed; })]);
+    // .domain([0, d3.max(filteredData, function(d) { return d.Confirmed; })]);
     // console.log(d3.max(filteredData, function(d) { return d.Confirmed; }))
     
-    var svg = d3.select("#scene1")
+    var svg1 = d3.select("#scene1")
 
-    svg.append('g')
+    svg1.append('g')
        .attr('transform','translate('+margin+','+margin+')')
-       .call(d3.axisLeft(y).tickFormat(d3.format('~s')));
+       .call(d3.axisLeft(y1).tickFormat(d3.format('~s')));
 
-    svg.append('g')
+    svg1.append('g')
         .attr('transform','translate('+margin+','+(height+margin)+')')
-        .call(d3.axisBottom(x))
+        .call(d3.axisBottom(x1))
         .selectAll("text") 
             .attr("transform", "translate(-10,10)rotate(-90)")
             .style("text-anchor", "end")
@@ -60,15 +60,15 @@ async function init(date) {
 
     // console.log(filteredData.Confirmed);
 
-    svg.selectAll(".bar")
-        .data(filteredData)
+    svg1.selectAll(".bar")
+        .data(filteredData1)
         .enter().append("rect")
         .style("fill", "steelblue")
         .attr("class", "bar")
-        .attr("x", function(d) {return x(d.Province_State) +  margin; })
-        .attr("y", function(d) {return y(d.Confirmed);})
-        .attr("width", x.bandwidth())
-        .attr("height", function(d) { return height - y(d.Confirmed); })
+        .attr("x", function(d) {return x1(d.Province_State) +  margin; })
+        .attr("y", function(d) {return y1(d.Confirmed);})
+        .attr("width", x1.bandwidth())
+        .attr("height", function(d) { return height - y1(d.Confirmed); })
         .attr('transform', 'translate(0,' + margin + ')');
 }
 
