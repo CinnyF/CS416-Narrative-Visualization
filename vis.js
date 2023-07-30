@@ -122,7 +122,7 @@ async function init(date) {
         .attr("x1", 0)
         .attr("y1", y1(confirmed_avg1) + margin)
         .attr("x2", width + margin)
-        .attr("y2", y1(confirmed_avg1) + margin))
+        .attr("y2", y1(confirmed_avg1) + margin)
         .style("stroke", "black")
 
 
