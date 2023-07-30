@@ -67,11 +67,35 @@ async function init(date) {
         .attr("y", function(d) {return y(d.Confirmed);})
         .attr("width", x.bandwidth())
         .attr("height", function(d) { return height - y(d.Confirmed); })
-    .attr('transform', 'translate(0,' + margin + ')');
+        .attr('transform', 'translate(0,' + margin + ')');
 }
 
 // async function update(date) {
-//     d3.select("#demo")
+    
+//     data = await d3.csv("ALL_DATA_filled_organized_2020_AS.csv");
+//     console.log(data['Confirmed'])
+//     const cleanData = data.map((d) => ({
+//         Province_State: d.Province_State,
+//         Date: d.Date,
+//         Confirmed: +d.Confirmed
+//     }));
+    
+//     var filteredData = cleanData.filter(function(d) { return d.Date == date; });
+    
+//     d3.select("#demo").text(date);
+//     d3.select("svg")
+//     .select("g")
+//     .selectAll("rect")
+//     .remove()
+//     .exit()
+//     .data(filteredData)
+//         .enter().append("rect")
+//         .style("fill", "steelblue")
+//         .attr("class", "bar")
+//         .attr("x", function(d) {return x(d.Province_State) +  margin; })
+//         .attr("y", function(d) {return y(d.Confirmed);})
+//         .attr("width", x.bandwidth())
+//         .attr("height", function(d) { return height - y(d.Confirmed); })
 // }
 
 
