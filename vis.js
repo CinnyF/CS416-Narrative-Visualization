@@ -110,7 +110,7 @@ async function init(date) {
         .attr("x", function(d) {return x1(d.Province_State) +  margin; })
         .attr("y", function(d) {return y1(d.Confirmed);})
         .attr("width", x1.bandwidth())
-        .attr("height", function(d) { return height - y1(d.Confirmed); })
+        .attr("height", function(d) { return height - y1(confirmed_avg1) - margin; })
         .attr('transform', 'translate(0,' + margin + ')');
 
     var confirmed_avg1 = d3.mean(cleanData1, function(d) { return d.Confirmed; });
