@@ -117,7 +117,7 @@ async function init(date) {
     svg1.append("line")
         .attr("x1", 0)
         .attr("y1", confirmed_avg1)
-        .attr("x2", margin)
+        .attr("x2", width / 2 + margin)
         .attr("y2",confirmed_avg1)
         .style("stroke", "black")
 
