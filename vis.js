@@ -42,7 +42,7 @@ async function init(date) {
         Date: d.Date,
         Confirmed: +d.Confirmed
     }));
-    var filteredData1 = cleanData1.filter(function(d) { return d.Date == date; });
+    var filteredData1 = cleanData1.filter(function(d) { return d.Date == "2020-05-12"; });
     // console.log(filteredData1)
 
     var x1 = d3.scaleBand()
@@ -92,7 +92,7 @@ async function init(date) {
         Date: d.Date,
         Confirmed: +d.Confirmed
     }));
-    var filteredData2 = cleanData2.filter(function(d) { return d.Date == date; });
+    var filteredData2 = cleanData2.filter(function(d) { return d.Date == "2021-05-12"; });
 
     var x2 = d3.scaleBand()
         .range([0, width])
