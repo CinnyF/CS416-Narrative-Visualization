@@ -102,8 +102,8 @@ async function init(date) {
         .data(filteredData)
         .enter().append("rect")
         .attr("class", "bar")
-        .attr("x", function(d) { return x(d.Province_State); })
-        .attr("y", function(d) {return y(0);})
+        .attr("x", function(d) { return x(d.Province_State) - (x.bandwidth() / 2); })
+        .attr("y", function(d) {return y(d.Confirmed);})
         .attr("width", x.bandwidth())
         .attr("height", function(d) { return height - y(d.Confirmed); });
 }
