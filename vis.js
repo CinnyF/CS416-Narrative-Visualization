@@ -128,11 +128,11 @@ async function init(date) {
             .style("font-size", 8);
     
     svg2.append("text")
-        .attr("class", "x label")
-        .attr("text-anchor", "end")
-        .attr("x", width)
-        .attr("y", height - 6)
-        .text("income per capita, inflation-adjusted (dollars)");
+        .attr("class", "x axis")
+        .attr("x", width / 2 )
+        .attr("y",  height + 6)
+        .style("text-anchor", "middle")
+        .text("State");
 
     svg2.selectAll(".bar")
         .data(filteredData2)
