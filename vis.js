@@ -29,6 +29,16 @@ slider2.oninput = function() {
   update2(calculate_date2(this.value));
 }
 
+// SLIDER 3
+var slider3 = document.getElementById("myRange3");
+var output3 = document.getElementById("demo3");
+output3.innerHTML = "2022-07-30";
+
+slider3.oninput = function() {
+  output3.innerHTML = calculate_date3(this.value);
+  update3(calculate_date3(this.value));
+}
+
 const width = 1100;
 const height = 450;
 const margin = 50;
@@ -126,6 +136,49 @@ async function init(date) {
         .attr("y", function(d) {return y2(d.Confirmed);})
         .attr("width", x2.bandwidth())
         .attr("height", function(d) { return height - y2(d.Confirmed); })
+        .attr('transform', 'translate(0,' + margin + ')');
+
+    // SCENE 3
+    data3 = await d3.csv("ALL_DATA_filled_organized_2022.csv");
+    const cleanData3 = data3.map((d) => ({
+        Province_State: d.Province_State,
+        Date: d.Date,
+        Confirmed: +d.Confirmed
+    }));
+    var filteredData3 = cleanData3.filter(function(d) { return d.Date == "2022-07-30"; });
+
+    var x3 = d3.scaleBand()
+        .range([0, width])
+        .domain(filteredData3.map(function(d) { return d.Province_State; }))
+        .padding(0.2);
+    
+    var y3 = d3.scaleLinear()
+        .range([height, 0])
+        .domain([0, d3.max(cleanData3, function(d) { return d.Confirmed; })]);
+
+    var svg3 = d3.select("#scene3")
+
+    svg3.append('g')
+       .attr('transform','translate('+margin+','+margin+')')
+       .call(d3.axisLeft(y3).tickFormat(d3.format('~s')));
+
+    svg3.append('g')
+        .attr('transform','translate('+margin+','+(height+margin)+')')
+        .call(d3.axisBottom(x3))
+        .selectAll("text") 
+            .attr("transform", "translate(-10,10)rotate(-90)")
+            .style("text-anchor", "end")
+            .style("font-size", 8);
+
+    svg3.selectAll(".bar")
+        .data(filteredData3)
+        .enter().append("rect")
+        .style("fill", "steelblue")
+        .attr("class", "bar")
+        .attr("x", function(d) {return x3(d.Province_State) +  margin; })
+        .attr("y", function(d) {return y3(d.Confirmed);})
+        .attr("width", x3.bandwidth())
+        .attr("height", function(d) { return height - y3(d.Confirmed); })
         .attr('transform', 'translate(0,' + margin + ')');
 }
 
@@ -275,6 +328,53 @@ async function update2(date) {
         .attr("y", function(d) {return y2(d.Confirmed);})
         .attr("width", x2.bandwidth())
         .attr("height", function(d) { return height - y2(d.Confirmed); })
+        .attr('transform', 'translate(0,' + margin + ')');
+}
+
+async function update3(date) {
+
+    d3.select("#scene3").selectAll("*").remove()
+
+    data3 = await d3.csv("ALL_DATA_filled_organized_2022.csv");
+    const cleanData3 = data3.map((d) => ({
+        Province_State: d.Province_State,
+        Date: d.Date,
+        Confirmed: +d.Confirmed
+    }));
+    var filteredData3 = cleanData3.filter(function(d) { return d.Date == "2022-07-30"; });
+
+    var x3 = d3.scaleBand()
+        .range([0, width])
+        .domain(filteredData3.map(function(d) { return d.Province_State; }))
+        .padding(0.2);
+    
+    var y3 = d3.scaleLinear()
+        .range([height, 0])
+        .domain([0, d3.max(cleanData3, function(d) { return d.Confirmed; })]);
+
+    var svg3 = d3.select("#scene3")
+
+    svg3.append('g')
+       .attr('transform','translate('+margin+','+margin+')')
+       .call(d3.axisLeft(y3).tickFormat(d3.format('~s')));
+
+    svg3.append('g')
+        .attr('transform','translate('+margin+','+(height+margin)+')')
+        .call(d3.axisBottom(x3))
+        .selectAll("text") 
+            .attr("transform", "translate(-10,10)rotate(-90)")
+            .style("text-anchor", "end")
+            .style("font-size", 8);
+
+    svg3.selectAll(".bar")
+        .data(filteredData3)
+        .enter().append("rect")
+        .style("fill", "steelblue")
+        .attr("class", "bar")
+        .attr("x", function(d) {return x3(d.Province_State) +  margin; })
+        .attr("y", function(d) {return y3(d.Confirmed);})
+        .attr("width", x3.bandwidth())
+        .attr("height", function(d) { return height - y3(d.Confirmed); })
         .attr('transform', 'translate(0,' + margin + ')');
 }
 
