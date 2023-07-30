@@ -15,6 +15,7 @@ output.innerHTML = "2020-05-12";
 
 slider.oninput = function() {
   output.innerHTML = calculate_date(this.value);
+  update(calculate_date(this.value));
 }
 
 const width = 1100;
@@ -70,33 +71,34 @@ async function init(date) {
         .attr('transform', 'translate(0,' + margin + ')');
 }
 
-// async function update(date) {
+async function update(date) {
     
-//     data = await d3.csv("ALL_DATA_filled_organized_2020_AS.csv");
-//     console.log(data['Confirmed'])
-//     const cleanData = data.map((d) => ({
-//         Province_State: d.Province_State,
-//         Date: d.Date,
-//         Confirmed: +d.Confirmed
-//     }));
+    data = await d3.csv("ALL_DATA_filled_organized_2020_AS.csv");
+    console.log(data['Confirmed'])
+    const cleanData = data.map((d) => ({
+        Province_State: d.Province_State,
+        Date: d.Date,
+        Confirmed: +d.Confirmed
+    }));
     
-//     var filteredData = cleanData.filter(function(d) { return d.Date == date; });
+    var filteredData = cleanData.filter(function(d) { return d.Date == date; });
     
-//     d3.select("#demo").text(date);
-//     d3.select("svg")
-//     .select("g")
-//     .selectAll("rect")
-//     .remove()
-//     .exit()
-//     .data(filteredData)
-//         .enter().append("rect")
-//         .style("fill", "steelblue")
-//         .attr("class", "bar")
-//         .attr("x", function(d) {return x(d.Province_State) +  margin; })
-//         .attr("y", function(d) {return y(d.Confirmed);})
-//         .attr("width", x.bandwidth())
-//         .attr("height", function(d) { return height - y(d.Confirmed); })
-// }
+    d3.select("#demo").text(date);
+    d3.select("svg")
+    .select("g")
+    .selectAll("rect")
+    .remove()
+    .exit()
+    .data(filteredData)
+        .enter().append("rect")
+        .style("fill", "steelblue")
+        .attr("class", "bar")
+        .attr("x", function(d) {return x(d.Province_State) +  margin; })
+        .attr("y", function(d) {return y(d.Confirmed);})
+        .attr("width", x.bandwidth())
+        .attr("height", function(d) { return height - y(d.Confirmed); })
+        .attr('transform', 'translate(0,' + margin + ')');
+}
 
 
 
