@@ -92,7 +92,7 @@ async function update(date) {
     
     var y = d3.scaleLinear()
         .range([height, 0])
-        .domain([0, d3.max(filteredData, function(d) { return d.Confirmed; })]);
+        .domain([0, d3.max(cleanData, function(d) { return d.Confirmed; })]);
     // console.log(d3.max(filteredData, function(d) { return d.Confirmed; }))
     
     var svg = d3.select("#scene1")
