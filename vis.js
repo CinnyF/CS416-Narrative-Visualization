@@ -102,8 +102,8 @@ async function init(date) {
         // .attr("dy", "2em")
         .style("font-size", 13)
         .style("text-anchor", "middle")
-        .text("Number of Cases");
-        .style('fill', 'black')
+        .text("Number of Cases")
+        .style('fill', 'black');
 
     // console.log(filteredData.Confirmed);
 
