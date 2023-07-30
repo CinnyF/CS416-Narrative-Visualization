@@ -88,6 +88,7 @@ async function init(date) {
         .attr("y",  height + margin + 130)
         .style("font-size", 13)
         .style("text-anchor", "middle")
+        .style('fill', 'white')
         .text("State");
     
     svg1.append("text")
@@ -98,6 +99,7 @@ async function init(date) {
         // .attr("dy", "2em")
         .style("font-size", 13)
         .style("text-anchor", "middle")
+        .style('fill', 'white')
         .text("Number of Cases");
 
     // console.log(filteredData.Confirmed);
@@ -105,7 +107,7 @@ async function init(date) {
     svg1.selectAll(".bar")
         .data(filteredData1)
         .enter().append("rect")
-        .style("fill", "steelblue")
+        .style("fill", "white")
         .attr("class", "bar")
         .attr("x", function(d) {return x1(d.Province_State) +  margin; })
         .attr("y", function(d) {return y1(d.Confirmed);})
@@ -123,7 +125,7 @@ async function init(date) {
         .attr("y1", y1(confirmed_avg1) + margin)
         .attr("x2", width + margin)
         .attr("y2", y1(confirmed_avg1) + margin)
-        .style("stroke", "black")
+        .style("stroke", "white")
 
 
     
@@ -165,6 +167,7 @@ async function init(date) {
         .attr("y",  height + margin + 130)
         .style("font-size", 13)
         .style("text-anchor", "middle")
+        .style('fill', 'white')
         .text("State");
     
     svg2.append("text")
@@ -175,12 +178,13 @@ async function init(date) {
         // .attr("dy", "2em")
         .style("font-size", 13)
         .style("text-anchor", "middle")
+        .style('fill', 'white')
         .text("Number of Cases");
 
     svg2.selectAll(".bar")
         .data(filteredData2)
         .enter().append("rect")
-        .style("fill", "steelblue")
+        .style("fill", "white")
         .attr("class", "bar")
         .attr("x", function(d) {return x2(d.Province_State) +  margin; })
         .attr("y", function(d) {return y2(d.Confirmed);})
@@ -194,7 +198,7 @@ async function init(date) {
         .attr("y1", y2(confirmed_avg2) + margin)
         .attr("x2", width + margin)
         .attr("y2", y2(confirmed_avg2) + margin)
-        .style("stroke", "black")
+        .style("stroke", "white")
     
 
     
@@ -236,6 +240,7 @@ async function init(date) {
         .attr("y",  height + margin + 130)
         .style("font-size", 13)
         .style("text-anchor", "middle")
+        .style('fill', 'white')
         .text("State");
     
     svg3.append("text")
@@ -246,12 +251,13 @@ async function init(date) {
         // .attr("dy", "2em")
         .style("font-size", 13)
         .style("text-anchor", "middle")
+        .style('fill', 'white')
         .text("Number of Cases");
 
     svg3.selectAll(".bar")
         .data(filteredData3)
         .enter().append("rect")
-        .style("fill", "steelblue")
+        .style("fill", "white")
         .attr("class", "bar")
         .attr("x", function(d) {return x3(d.Province_State) +  margin; })
         .attr("y", function(d) {return y3(d.Confirmed);})
@@ -265,7 +271,7 @@ async function init(date) {
         .attr("y1", y3(confirmed_avg3) + margin)
         .attr("x2", width + margin)
         .attr("y2", y3(confirmed_avg3) + margin)
-        .style("stroke", "black")
+        .style("stroke", "white")
 }
 
 async function update1(date) {
@@ -313,6 +319,7 @@ async function update1(date) {
         .attr("y",  height + margin + 130)
         .style("font-size", 13)
         .style("text-anchor", "middle")
+        .style('fill', 'white')
         .text("State");
     
     svg1.append("text")
@@ -323,6 +330,7 @@ async function update1(date) {
         // .attr("dy", "2em")
         .style("font-size", 13)
         .style("text-anchor", "middle")
+        .style('fill', 'white')
         .text("Number of Cases");
 
     // console.log(filteredData.Confirmed);
@@ -330,7 +338,7 @@ async function update1(date) {
     svg1.selectAll(".bar")
         .data(filteredData1)
         .enter().append("rect")
-        .style("fill", "steelblue")
+        .style("fill", "white")
         .attr("class", "bar")
         .attr("x", function(d) {return x1(d.Province_State) +  margin; })
         .attr("y", function(d) {return y1(d.Confirmed);})
@@ -344,7 +352,7 @@ async function update1(date) {
         .attr("y1", y1(confirmed_avg1) + margin)
         .attr("x2", width + margin)
         .attr("y2", y1(confirmed_avg1) + margin)
-        .style("stroke", "black")
+        .style("stroke", "white")
     
     
     // data = await d3.csv("ALL_DATA_filled_organized_2020_AS.csv");
@@ -437,6 +445,7 @@ async function update2(date) {
         .attr("y",  height + margin + 130)
         .style("font-size", 13)
         .style("text-anchor", "middle")
+        .style('fill', 'white')
         .text("State");
     
     svg2.append("text")
@@ -447,12 +456,13 @@ async function update2(date) {
         // .attr("dy", "2em")
         .style("font-size", 13)
         .style("text-anchor", "middle")
+        .style('fill', 'white')
         .text("Number of Cases");
 
     svg2.selectAll(".bar")
         .data(filteredData2)
         .enter().append("rect")
-        .style("fill", "steelblue")
+        .style("fill", "white")
         .attr("class", "bar")
         .attr("x", function(d) {return x2(d.Province_State) +  margin; })
         .attr("y", function(d) {return y2(d.Confirmed);})
@@ -466,7 +476,7 @@ async function update2(date) {
         .attr("y1", y2(confirmed_avg2) + margin)
         .attr("x2", width + margin)
         .attr("y2", y2(confirmed_avg2) + margin)
-        .style("stroke", "black")
+        .style("stroke", "white")
 }
 
 async function update3(date) {
@@ -510,6 +520,7 @@ async function update3(date) {
         .attr("y",  height + margin + 130)
         .style("font-size", 13)
         .style("text-anchor", "middle")
+        .style('fill', 'white')
         .text("State");
     
     svg3.append("text")
@@ -520,12 +531,13 @@ async function update3(date) {
         // .attr("dy", "2em")
         .style("font-size", 13)
         .style("text-anchor", "middle")
+        .style('fill', 'white')
         .text("Number of Cases");
 
     svg3.selectAll(".bar")
         .data(filteredData3)
         .enter().append("rect")
-        .style("fill", "steelblue")
+        .style("fill", "white")
         .attr("class", "bar")
         .attr("x", function(d) {return x3(d.Province_State) +  margin; })
         .attr("y", function(d) {return y3(d.Confirmed);})
@@ -539,7 +551,7 @@ async function update3(date) {
         .attr("y1", y3(confirmed_avg3) + margin)
         .attr("x2", width + margin)
         .attr("y2", y3(confirmed_avg3) + margin)
-        .style("stroke", "black")
+        .style("stroke", "white")
 }
 
 
