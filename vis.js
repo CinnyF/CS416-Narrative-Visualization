@@ -73,7 +73,7 @@ async function init(date) {
 
 async function update(date) {
 
-    d3.select("svg").remove()
+    d3.select("svg").selectAll("*").remove()
     
     data = await d3.csv("ALL_DATA_filled_organized_2020_AS.csv");
     console.log(data['Confirmed'])
