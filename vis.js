@@ -43,7 +43,7 @@ async function init(date) {
         .domain([0, d3.max(filteredData, function(d) { return d.Confirmed; })]);
     // console.log(d3.max(filteredData, function(d) { return d.Confirmed; }))
     
-    var svg = d3.select("#scence1")
+    var svg = d3.select("#scene1")
 
     svg.append('g')
        .attr('transform','translate('+margin+','+margin+')')
@@ -73,7 +73,7 @@ async function init(date) {
 
 async function update(date) {
 
-    d3.select("#scence1").selectAll("*").remove()
+    d3.select("#scene1").selectAll("*").remove()
     
     data = await d3.csv("ALL_DATA_filled_organized_2020_AS.csv");
     console.log(data['Confirmed'])
@@ -95,7 +95,7 @@ async function update(date) {
         .domain([0, d3.max(filteredData, function(d) { return d.Confirmed; })]);
     // console.log(d3.max(filteredData, function(d) { return d.Confirmed; }))
     
-    var svg = d3.select("#scence1")
+    var svg = d3.select("#scene1")
 
     svg.append('g')
        .attr('transform','translate('+margin+','+margin+')')
