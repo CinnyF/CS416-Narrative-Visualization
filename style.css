@@ -50,15 +50,15 @@ button:hover{
 }
 
 .one{
-  background: #EDBE7F;
+  background: #FFFFFF;
 }
 
 .two{
-  background-color: #7FC0ED;
+  background-color: #FFFFFF;
 }
 
 .three{
-  background-color: #F3AED1;
+  background-color: #FFFFFF;
 }
 
 h1 {
@@ -69,6 +69,7 @@ h1 {
     letter-spacing: 1px;
     line-height: 1.5;
     text-align: center;
+    background: #C23C31;
 }
 
 h2 {
@@ -117,7 +118,7 @@ p {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: #04AA6D;
+  background: #C23C31;
   cursor: pointer;
 }
 
@@ -125,6 +126,6 @@ p {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: #04AA6D;
+  background: #C23C31;
   cursor: pointer;
 }
