@@ -82,7 +82,7 @@ async function init(date) {
     
     svg1.append("text")
         .attr("class", "x axis")
-        .attr("x", width / 2 + margin / 2 )
+        .attr("x", width / 2 + margin)
         .attr("y",  height + margin + 130)
         .style("font-size", 13)
         .style("text-anchor", "middle")
@@ -147,7 +147,7 @@ async function init(date) {
     
     svg2.append("text")
         .attr("class", "x axis")
-        .attr("x", width / 2 + margin / 2 )
+        .attr("x", width / 2 + margin / 1.5 )
         .attr("y",  height + margin + 130)
         .style("font-size", 13)
         .style("text-anchor", "middle")
@@ -208,7 +208,7 @@ async function init(date) {
 
     svg3.append("text")
         .attr("class", "x axis")
-        .attr("x", width / 2 + margin / 2 )
+        .attr("x", width / 2 + margin * 1.5)
         .attr("y",  height + margin + 130)
         .style("font-size", 13)
         .style("text-anchor", "middle")
