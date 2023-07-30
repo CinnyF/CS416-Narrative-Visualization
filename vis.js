@@ -114,6 +114,9 @@ async function init(date) {
         .attr('transform', 'translate(0,' + margin + ')');
 
     var confirmed_avg1 = d3.mean(cleanData1, function(d) { return d.Confirmed; });
+    console.log("-------")
+    console.log(confirmed_avg1)
+    console.log("-------")
     svg1.append("line")
         .attr("x1", 0)
         .attr("y1", function(confirmed_avg1) {return y1(confirmed_avg1);})
