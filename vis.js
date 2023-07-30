@@ -128,14 +128,14 @@ async function init(date) {
         .style("stroke", "white")
     svg1.append('rect')
     .attr('x', 0)
-    .attr('y', y1(average))
+    .attr('y', y1(confirmed_avg1))
     .attr('width', width)
     .attr('height', 2)
     .style('fill', 'black');
 
     svg1.append('text')
         .attr('x', width / 2)
-        .attr('y', y1(average) - 5)
+        .attr('y', y1(confirmed_avg1) - 5)
         .text('average')
         .style('font-size', '12px')
         .style('text-anchor', 'middle');
