@@ -116,7 +116,7 @@ async function init(date) {
     var confirmed_avg1 = d3.mean(cleanData1, function(d) { return d.Confirmed; });
     svg1.append("line")
         .attr("x1", 0)
-        .attr("y1", height / 2)
+        .attr("y1", function(confirmed_avg1) {return y1(confirmed_avg1);})
         .attr("x2", width / 2 + margin)
         .attr("y2",height / 2)
         .style("stroke", "black")
