@@ -9,12 +9,12 @@ slide = (direction) => {
     );
 }
 
-var slider = document.getElementById("myRange");
-var output = document.getElementById("demo");
-output.innerHTML = "2020-05-12";
+var slider1 = document.getElementById("myRange1");
+var output1 = document.getElementById("demo1");
+output1.innerHTML = "2020-05-12";
 
-slider.oninput = function() {
-  output.innerHTML = calculate_date(this.value);
+slider1.oninput = function() {
+  output1.innerHTML = calculate_date(this.value);
   update(calculate_date(this.value));
 }
 
@@ -43,7 +43,7 @@ async function init(date) {
         .domain([0, d3.max(filteredData, function(d) { return d.Confirmed; })]);
     // console.log(d3.max(filteredData, function(d) { return d.Confirmed; }))
     
-    var svg = d3.select('svg')
+    var svg = d3.select("#scence1")
 
     svg.append('g')
        .attr('transform','translate('+margin+','+margin+')')
@@ -73,7 +73,7 @@ async function init(date) {
 
 async function update(date) {
 
-    d3.select("svg").selectAll("*").remove()
+    d3.select("#scence1").selectAll("*").remove()
     
     data = await d3.csv("ALL_DATA_filled_organized_2020_AS.csv");
     console.log(data['Confirmed'])
@@ -95,7 +95,7 @@ async function update(date) {
         .domain([0, d3.max(filteredData, function(d) { return d.Confirmed; })]);
     // console.log(d3.max(filteredData, function(d) { return d.Confirmed; }))
     
-    var svg = d3.select('svg')
+    var svg = d3.select("#scence1")
 
     svg.append('g')
        .attr('transform','translate('+margin+','+margin+')')
@@ -121,22 +121,6 @@ async function update(date) {
         .attr("width", x.bandwidth())
         .attr("height", function(d) { return height - y(d.Confirmed); })
         .attr('transform', 'translate(0,' + margin + ')');
-    
-    // d3.select("#demo").text(date);
-    // d3.select("svg")
-    // .select("g")
-    // .selectAll("rect")
-    // .remove()
-    // .exit()
-    // .data(filteredData)
-    //     .enter().append("rect")
-    //     .style("fill", "steelblue")
-    //     .attr("class", "bar")
-    //     .attr("x", function(d) {return x(d.Province_State) +  margin; })
-    //     .attr("y", function(d) {return y(d.Confirmed);})
-    //     .attr("width", x.bandwidth())
-    //     .attr("height", function(d) { return height - y(d.Confirmed); })
-    //     .attr('transform', 'translate(0,' + margin + ')');
 }
 
 
