@@ -557,3 +557,105 @@ function calculate_date2(num) {
   }
   return res_date;
 }
+
+function calculate_date3(num) {
+  const initial_str = "2022-07-30";
+  var res_date;
+  if (Number(num) >= 0 && Number(num) <= 30) {
+      if ((Number(1) + Number(num) - Number(0)) < 10) {
+          res_date = "2022-01-0" + (Number(1) + Number(num) - Number(0)).toString()
+      }
+      else {
+          res_date = "2022-01-" + (Number(1) + Number(num) - Number(0)).toString()
+      }
+  }
+  else if (Number(num) >= 31 && Number(num) <= 58) {
+    if ((Number(1) + Number(num) - Number(31)) < 10) {
+      res_date = "2022-02-0" + (Number(1) + Number(num) - Number(31)).toString()
+    }
+    else {
+      res_date = "2022-02-" + (Number(1) + Number(num) - Number(31)).toString()
+    }
+  }
+  else if (Number(num) >= 59 && Number(num) <= 89) {
+    if ((Number(1) + Number(num) - Number(59)) < 10) {
+      res_date = "2022-03-0" + (Number(1) + Number(num) - Number(59)).toString()
+    }
+    else {
+      res_date = "2022-03-" + (Number(1) + Number(num) - Number(59)).toString()
+    }
+  }
+  else if (Number(num) >= 90 && Number(num) <= 119) {
+    if ((Number(1) + Number(num) - Number(90)) < 10) {
+      res_date = "2022-04-0" + (Number(1) + Number(num) - Number(90)).toString()
+    }
+    else {
+      res_date = "2022-04-" + (Number(1) + Number(num) - Number(90)).toString()
+    }
+  }
+  else if (Number(num) >= 120 && Number(num) <= 150) {
+    if ((Number(1) + Number(num) - Number(120)) < 10) {
+      res_date = "2022-05-0" + (Number(1) + Number(num) - Number(120)).toString()
+    }
+    else {
+      res_date = "2022-05-" + (Number(1) + Number(num) - Number(120)).toString()
+    }
+  }
+  else if (Number(num) >= 151 && Number(num) <= 180) {
+    if ((Number(1) + Number(num) - Number(151)) < 10) {
+      res_date = "2022-06-0" + (Number(1) + Number(num) - Number(151)).toString()
+    }
+    else {
+      res_date = "2022-06-" + (Number(1) + Number(num) - Number(151)).toString()
+    }
+  }
+  else if (Number(num) >= 181 && Number(num) <= 211) {
+    if ((Number(1) + Number(num) - Number(181)) < 10) {
+      res_date = "2022-07-0" + (Number(1) + Number(num) - Number(181)).toString()
+    }
+    else {
+      res_date = "2022-07-" + (Number(1) + Number(num) - Number(181)).toString()
+    }
+  }
+  else if (Number(num) >= 212 && Number(num) <= 242) {
+    if ((Number(1) + Number(num) - Number(212)) < 10) {
+      res_date = "2022-08-0" + (Number(1) + Number(num) - Number(212)).toString()
+    }
+    else {
+      res_date = "2022-08-" + (Number(1) + Number(num) - Number(212)).toString()
+    }
+  }
+  else if (Number(num) >= 243 && Number(num) <= 272) {
+    if ((Number(1) + Number(num) - Number(243)) < 10) {
+      res_date = "2022-09-0" + (Number(1) + Number(num) - Number(243)).toString()
+    }
+    else {
+      res_date = "2022-09-" + (Number(1) + Number(num) - Number(243)).toString()
+    }
+  }
+  else if (Number(num) >= 273 && Number(num) <= 303) {
+    if ((Number(1) + Number(num) - Number(273)) < 10) {
+      res_date = "2022-10-0" + (Number(1) + Number(num) - Number(273)).toString()
+    }
+    else {
+      res_date = "2022-10-" + (Number(1) + Number(num) - Number(273)).toString()
+    }
+  }
+  else if (Number(num) >= 304 && Number(num) <= 333) {
+    if ((Number(1) + Number(num) - Number(304)) < 10) {
+      res_date = "2022-11-0" + (Number(1) + Number(num) - Number(304)).toString()
+    }
+    else {
+      res_date = "2022-11-" + (Number(1) + Number(num) - Number(304)).toString()
+    }
+  }
+  else {
+    if ((Number(1) + Number(num) - Number(334)) < 10) {
+      res_date = "2022-12-0" + (Number(1) + Number(num) - Number(334)).toString()
+    }
+    else {
+      res_date = "2022-12-" + (Number(1) + Number(num) - Number(334)).toString()
+    }
+  }
+  return res_date;
+}
