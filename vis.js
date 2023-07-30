@@ -101,8 +101,9 @@ async function init(date) {
     svg.selectAll(".bar")
         .data(filteredData)
         .enter().append("rect")
+        .style("fill", "steelblue")
         .attr("class", "bar")
-        .attr("x", function(d) {return x(d.Province_State) + margin + x.bandwidth() / 2; })
+        .attr("x", function(d) {return x(d.Province_State) + x.bandwidth() / 2; })
         .attr("y", function(d) {return y(d.Confirmed);})
         .attr("width", x.bandwidth())
         .attr("height", function(d) { return height - y(d.Confirmed); });
