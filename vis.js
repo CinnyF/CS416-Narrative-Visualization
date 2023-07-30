@@ -128,7 +128,7 @@ async function init(date) {
         .style("stroke", "white")
     
     svg1.append('text')
-        .attr('x', width + margin)
+        .attr('x', width + margin + 5)
         .attr('y', y1(confirmed_avg1) + margin)
         .attr('dy', -6)
         .text('average:')
@@ -137,7 +137,7 @@ async function init(date) {
         .style("fill", "white");
 
     svg1.append('text')
-        .attr('x', width + margin)
+        .attr('x', width + margin + 5)
         .attr('y', y1(confirmed_avg1) + margin)
         .attr('dy', 6)
         .text(Math.floor(confirmed_avg1))
@@ -219,7 +219,7 @@ async function init(date) {
         .style("stroke", "white")
 
     svg2.append('text')
-        .attr('x', width + margin)
+        .attr('x', width + margin + 5)
         .attr('y', y2(confirmed_avg2) + margin)
         .attr('dy', -6)
         .text('average:')
@@ -228,7 +228,7 @@ async function init(date) {
         .style("fill", "white");
 
     svg2.append('text')
-        .attr('x', width + margin)
+        .attr('x', width + margin + 5)
         .attr('y', y2(confirmed_avg2) + margin)
         .attr('dy', 6)
         .text(Math.floor(confirmed_avg2))
@@ -310,7 +310,7 @@ async function init(date) {
         .style("stroke", "white")
 
     svg3.append('text')
-        .attr('x', width + margin)
+        .attr('x', width + margin + 5)
         .attr('y', y3(confirmed_avg3) + margin)
         .attr('dy', -6)
         .text('average:')
@@ -319,7 +319,7 @@ async function init(date) {
         .style("fill", "white");
 
     svg3.append('text')
-        .attr('x', width + margin)
+        .attr('x', width + margin + 5)
         .attr('y', y3(confirmed_avg3) + margin)
         .attr('dy', 6)
         .text(Math.floor(confirmed_avg3))
@@ -409,7 +409,7 @@ async function update1(date) {
         .style("stroke", "white")
 
     svg1.append('text')
-        .attr('x', width + margin)
+        .attr('x', width + margin + 5)
         .attr('y', y1(confirmed_avg1) + margin)
         .attr('dy', -6)
         .text('average:')
@@ -418,7 +418,7 @@ async function update1(date) {
         .style("fill", "white");
 
     svg1.append('text')
-        .attr('x', width + margin)
+        .attr('x', width + margin + 5)
         .attr('y', y1(confirmed_avg1) + margin)
         .attr('dy', 6)
         .text(Math.floor(confirmed_avg1))
@@ -551,7 +551,7 @@ async function update2(date) {
         .style("stroke", "white")
 
     svg2.append('text')
-        .attr('x', width + margin)
+        .attr('x', width + margin + 5)
         .attr('y', y2(confirmed_avg2) + margin)
         .attr('dy', -6)
         .text('average:')
@@ -560,7 +560,7 @@ async function update2(date) {
         .style("fill", "white");
 
     svg2.append('text')
-        .attr('x', width + margin)
+        .attr('x', width + margin + 5)
         .attr('y', y2(confirmed_avg2) + margin)
         .attr('dy', 6)
         .text(Math.floor(confirmed_avg2))
@@ -644,7 +644,7 @@ async function update3(date) {
         .style("stroke", "white")
 
     svg3.append('text')
-        .attr('x', width + margin)
+        .attr('x', width + margin + 5)
         .attr('y', y3(confirmed_avg3) + margin)
         .attr('dy', -6)
         .text('average:')
@@ -653,7 +653,7 @@ async function update3(date) {
         .style("fill", "white");
 
     svg3.append('text')
-        .attr('x', width + margin)
+        .attr('x', width + margin + 5)
         .attr('y', y3(confirmed_avg3) + margin)
         .attr('dy', 6)
         .text(Math.floor(confirmed_avg3))
