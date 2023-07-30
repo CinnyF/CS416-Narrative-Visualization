@@ -79,6 +79,24 @@ async function init(date) {
             .attr("transform", "translate(-10,10)rotate(-90)")
             .style("text-anchor", "end")
             .style("font-size", 8);
+    
+    svg1.append("text")
+        .attr("class", "x axis")
+        .attr("x", width / 2 + margin / 2 )
+        .attr("y",  height + margin + 130)
+        .style("font-size", 13)
+        .style("text-anchor", "middle")
+        .text("State");
+    
+    svg1.append("text")
+        .attr("class", "y axis")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 10)
+        .attr("x", 0 - (height / 2))
+        // .attr("dy", "2em")
+        .style("font-size", 13)
+        .style("text-anchor", "middle")
+        .text("Number of Cases");
 
     // console.log(filteredData.Confirmed);
 
@@ -188,6 +206,24 @@ async function init(date) {
             .style("text-anchor", "end")
             .style("font-size", 8);
 
+    svg3.append("text")
+        .attr("class", "x axis")
+        .attr("x", width / 2 + margin / 2 )
+        .attr("y",  height + margin + 130)
+        .style("font-size", 13)
+        .style("text-anchor", "middle")
+        .text("State");
+    
+    svg3.append("text")
+        .attr("class", "y axis")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 10)
+        .attr("x", 0 - (height / 2))
+        // .attr("dy", "2em")
+        .style("font-size", 13)
+        .style("text-anchor", "middle")
+        .text("Number of Cases");
+
     svg3.selectAll(".bar")
         .data(filteredData3)
         .enter().append("rect")
@@ -238,6 +274,24 @@ async function update1(date) {
             .attr("transform", "translate(-10,10)rotate(-90)")
             .style("text-anchor", "end")
             .style("font-size", 8);
+
+    svg1.append("text")
+        .attr("class", "x axis")
+        .attr("x", width / 2 + margin / 2 )
+        .attr("y",  height + margin + 130)
+        .style("font-size", 13)
+        .style("text-anchor", "middle")
+        .text("State");
+    
+    svg1.append("text")
+        .attr("class", "y axis")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 10)
+        .attr("x", 0 - (height / 2))
+        // .attr("dy", "2em")
+        .style("font-size", 13)
+        .style("text-anchor", "middle")
+        .text("Number of Cases");
 
     // console.log(filteredData.Confirmed);
 
@@ -337,6 +391,24 @@ async function update2(date) {
             .style("text-anchor", "end")
             .style("font-size", 8);
 
+    svg2.append("text")
+        .attr("class", "x axis")
+        .attr("x", width / 2 + margin / 2 )
+        .attr("y",  height + margin + 130)
+        .style("font-size", 13)
+        .style("text-anchor", "middle")
+        .text("State");
+    
+    svg2.append("text")
+        .attr("class", "y axis")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 10)
+        .attr("x", 0 - (height / 2))
+        // .attr("dy", "2em")
+        .style("font-size", 13)
+        .style("text-anchor", "middle")
+        .text("Number of Cases");
+
     svg2.selectAll(".bar")
         .data(filteredData2)
         .enter().append("rect")
@@ -383,6 +455,24 @@ async function update3(date) {
             .attr("transform", "translate(-10,10)rotate(-90)")
             .style("text-anchor", "end")
             .style("font-size", 8);
+
+    svg3.append("text")
+        .attr("class", "x axis")
+        .attr("x", width / 2 + margin / 2 )
+        .attr("y",  height + margin + 130)
+        .style("font-size", 13)
+        .style("text-anchor", "middle")
+        .text("State");
+    
+    svg3.append("text")
+        .attr("class", "y axis")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 10)
+        .attr("x", 0 - (height / 2))
+        // .attr("dy", "2em")
+        .style("font-size", 13)
+        .style("text-anchor", "middle")
+        .text("Number of Cases");
 
     svg3.selectAll(".bar")
         .data(filteredData3)
