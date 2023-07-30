@@ -16,7 +16,7 @@ output1.innerHTML = "2020-07-30";
 
 slider1.oninput = function() {
   output1.innerHTML = calculate_date1(this.value);
-  update(calculate_date1(this.value));
+  update1(calculate_date1(this.value));
 }
 
 // SLIDER 2
@@ -26,7 +26,7 @@ output2.innerHTML = "2021-07-30";
 
 slider2.oninput = function() {
   output2.innerHTML = calculate_date2(this.value);
-  update(calculate_date2(this.value));
+  update2(calculate_date2(this.value));
 }
 
 const width = 1100;
@@ -85,7 +85,7 @@ async function init(date) {
 
 
     
-    // SCENE 2 -- NOT CHANGED YET
+    // SCENE 2
     data2 = await d3.csv("ALL_DATA_filled_organized_2021_AS.csv");
     const cleanData2 = data2.map((d) => ({
         Province_State: d.Province_State,
@@ -129,39 +129,40 @@ async function init(date) {
         .attr('transform', 'translate(0,' + margin + ')');
 }
 
-async function update(date) {
+async function update1(date) {
 
     d3.select("#scene1").selectAll("*").remove()
     
-    data = await d3.csv("ALL_DATA_filled_organized_2020_AS.csv");
-    // console.log(data['Confirmed'])
-    const cleanData = data.map((d) => ({
+    data1 = await d3.csv("ALL_DATA_filled_organized_2020_AS.csv");
+    // console.log(data1['Confirmed'])
+    const cleanData1 = data1.map((d) => ({
         Province_State: d.Province_State,
         Date: d.Date,
         Confirmed: +d.Confirmed
     }));
-    
-    var filteredData = cleanData.filter(function(d) { return d.Date == date; });
+    var filteredData1 = cleanData1.filter(function(d) { return d.Date == "2020-07-30"; });
+    // console.log(filteredData1)
 
-    var x = d3.scaleBand()
+    var x1 = d3.scaleBand()
         .range([0, width])
-        .domain(filteredData.map(function(d) { return d.Province_State; }))
+        .domain(filteredData1.map(function(d) { return d.Province_State; }))
         .padding(0.2);
     
-    var y = d3.scaleLinear()
+    var y1 = d3.scaleLinear()
         .range([height, 0])
-        .domain([0, d3.max(cleanData, function(d) { return d.Confirmed; })]);
+        .domain([0, d3.max(cleanData1, function(d) { return d.Confirmed; })]);
+    // .domain([0, d3.max(filteredData, function(d) { return d.Confirmed; })]);
     // console.log(d3.max(filteredData, function(d) { return d.Confirmed; }))
     
-    var svg = d3.select("#scene1")
+    var svg1 = d3.select("#scene1")
 
-    svg.append('g')
+    svg1.append('g')
        .attr('transform','translate('+margin+','+margin+')')
-       .call(d3.axisLeft(y).tickFormat(d3.format('~s')));
+       .call(d3.axisLeft(y1).tickFormat(d3.format('~s')));
 
-    svg.append('g')
+    svg1.append('g')
         .attr('transform','translate('+margin+','+(height+margin)+')')
-        .call(d3.axisBottom(x))
+        .call(d3.axisBottom(x1))
         .selectAll("text") 
             .attr("transform", "translate(-10,10)rotate(-90)")
             .style("text-anchor", "end")
@@ -169,21 +170,113 @@ async function update(date) {
 
     // console.log(filteredData.Confirmed);
 
-    svg.selectAll(".bar")
-        .data(filteredData)
+    svg1.selectAll(".bar")
+        .data(filteredData1)
         .enter().append("rect")
         .style("fill", "steelblue")
         .attr("class", "bar")
-        .attr("x", function(d) {return x(d.Province_State) +  margin; })
-        .attr("y", function(d) {return y(d.Confirmed);})
-        .attr("width", x.bandwidth())
-        .attr("height", function(d) { return height - y(d.Confirmed); })
+        .attr("x", function(d) {return x1(d.Province_State) +  margin; })
+        .attr("y", function(d) {return y1(d.Confirmed);})
+        .attr("width", x1.bandwidth())
+        .attr("height", function(d) { return height - y1(d.Confirmed); })
         .attr('transform', 'translate(0,' + margin + ')');
+    
+    
+    // data = await d3.csv("ALL_DATA_filled_organized_2020_AS.csv");
+    // // console.log(data['Confirmed'])
+    // const cleanData = data.map((d) => ({
+    //     Province_State: d.Province_State,
+    //     Date: d.Date,
+    //     Confirmed: +d.Confirmed
+    // }));
+    // var filteredData = cleanData.filter(function(d) { return d.Date == date; });
+
+    
+    // var x = d3.scaleBand()
+    //     .range([0, width])
+    //     .domain(filteredData.map(function(d) { return d.Province_State; }))
+    //     .padding(0.2);
+    
+    // var y = d3.scaleLinear()
+    //     .range([height, 0])
+    //     .domain([0, d3.max(cleanData, function(d) { return d.Confirmed; })]);
+    // // console.log(d3.max(filteredData, function(d) { return d.Confirmed; }))
+
+    
+    // var svg = d3.select("#scene1")
+
+    // svg.append('g')
+    //    .attr('transform','translate('+margin+','+margin+')')
+    //    .call(d3.axisLeft(y).tickFormat(d3.format('~s')));
+
+    // svg.append('g')
+    //     .attr('transform','translate('+margin+','+(height+margin)+')')
+    //     .call(d3.axisBottom(x))
+    //     .selectAll("text") 
+    //         .attr("transform", "translate(-10,10)rotate(-90)")
+    //         .style("text-anchor", "end")
+    //         .style("font-size", 8);
+
+    // // console.log(filteredData.Confirmed);
+
+    // svg.selectAll(".bar")
+    //     .data(filteredData)
+    //     .enter().append("rect")
+    //     .style("fill", "steelblue")
+    //     .attr("class", "bar")
+    //     .attr("x", function(d) {return x(d.Province_State) +  margin; })
+    //     .attr("y", function(d) {return y(d.Confirmed);})
+    //     .attr("width", x.bandwidth())
+    //     .attr("height", function(d) { return height - y(d.Confirmed); })
+    //     .attr('transform', 'translate(0,' + margin + ')');
 }
 
+async function update2(date) {
 
+    d3.select("#scene2").selectAll("*").remove()
 
+    data2 = await d3.csv("ALL_DATA_filled_organized_2021_AS.csv");
+    const cleanData2 = data2.map((d) => ({
+        Province_State: d.Province_State,
+        Date: d.Date,
+        Confirmed: +d.Confirmed
+    }));
+    var filteredData2 = cleanData2.filter(function(d) { return d.Date == "2021-07-30"; });
 
+    var x2 = d3.scaleBand()
+        .range([0, width])
+        .domain(filteredData2.map(function(d) { return d.Province_State; }))
+        .padding(0.2);
+    
+    var y2 = d3.scaleLinear()
+        .range([height, 0])
+        .domain([0, d3.max(cleanData2, function(d) { return d.Confirmed; })]);
+
+    var svg2 = d3.select("#scene2")
+
+    svg2.append('g')
+       .attr('transform','translate('+margin+','+margin+')')
+       .call(d3.axisLeft(y2).tickFormat(d3.format('~s')));
+
+    svg2.append('g')
+        .attr('transform','translate('+margin+','+(height+margin)+')')
+        .call(d3.axisBottom(x2))
+        .selectAll("text") 
+            .attr("transform", "translate(-10,10)rotate(-90)")
+            .style("text-anchor", "end")
+            .style("font-size", 8);
+
+    svg2.selectAll(".bar")
+        .data(filteredData2)
+        .enter().append("rect")
+        .style("fill", "steelblue")
+        .attr("class", "bar")
+        .attr("x", function(d) {return x2(d.Province_State) +  margin; })
+        .attr("y", function(d) {return y2(d.Confirmed);})
+        .attr("width", x2.bandwidth())
+        .attr("height", function(d) { return height - y2(d.Confirmed); })
+        .attr('transform', 'translate(0,' + margin + ')');
+}
 
 
 
