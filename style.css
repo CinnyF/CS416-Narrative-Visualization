@@ -80,6 +80,7 @@ h2 {
     letter-spacing: 1px;
     line-height: 1.5;
     text-align: center;
+    color: white;
 }
 
 p {
@@ -90,6 +91,8 @@ p {
     letter-spacing: 1px;
     line-height: 1.5;
     text-align: center;
+    background: #C23C31;
+    color: white;
 }
 
 .slidecontainer {
