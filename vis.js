@@ -341,7 +341,7 @@ async function update3(date) {
         Date: d.Date,
         Confirmed: +d.Confirmed
     }));
-    var filteredData3 = cleanData3.filter(function(d) { return d.Date == "2022-07-30"; });
+    var filteredData3 = cleanData3.filter(function(d) { return d.Date == date; });
 
     var x3 = d3.scaleBand()
         .range([0, width])
