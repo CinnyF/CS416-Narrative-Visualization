@@ -130,7 +130,7 @@ async function init(date) {
     svg1.append('text')
         .attr('x', width + margin)
         .attr('y', y1(confirmed_avg1) + margin)
-        .attr('dy', -9)
+        .attr('dy', -6)
         .text('average:')
         .style('font-size', '8')
         .style('text-anchor', 'start')
@@ -139,7 +139,7 @@ async function init(date) {
     svg1.append('text')
         .attr('x', width + margin)
         .attr('y', y1(confirmed_avg1) + margin)
-        .attr('dy', 9)
+        .attr('dy', 6)
         .text(Math.floor(confirmed_avg1))
         .style('font-size', '8')
         .style('text-anchor', 'start')
@@ -217,6 +217,24 @@ async function init(date) {
         .attr("x2", width + margin)
         .attr("y2", y2(confirmed_avg2) + margin)
         .style("stroke", "white")
+
+    svg2.append('text')
+        .attr('x', width + margin)
+        .attr('y', y2(confirmed_avg2) + margin)
+        .attr('dy', -6)
+        .text('average:')
+        .style('font-size', '8')
+        .style('text-anchor', 'start')
+        .style("fill", "white");
+
+    svg2.append('text')
+        .attr('x', width + margin)
+        .attr('y', y2(confirmed_avg2) + margin)
+        .attr('dy', 6)
+        .text(Math.floor(confirmed_avg2))
+        .style('font-size', '8')
+        .style('text-anchor', 'start')
+        .style("fill", "white");
     
 
     
@@ -290,6 +308,24 @@ async function init(date) {
         .attr("x2", width + margin)
         .attr("y2", y3(confirmed_avg3) + margin)
         .style("stroke", "white")
+
+    svg3.append('text')
+        .attr('x', width + margin)
+        .attr('y', y3(confirmed_avg3) + margin)
+        .attr('dy', -6)
+        .text('average:')
+        .style('font-size', '8')
+        .style('text-anchor', 'start')
+        .style("fill", "white");
+
+    svg3.append('text')
+        .attr('x', width + margin)
+        .attr('y', y3(confirmed_avg3) + margin)
+        .attr('dy', 6)
+        .text(Math.floor(confirmed_avg3))
+        .style('font-size', '8')
+        .style('text-anchor', 'start')
+        .style("fill", "white");
 }
 
 async function update1(date) {
@@ -371,6 +407,24 @@ async function update1(date) {
         .attr("x2", width + margin)
         .attr("y2", y1(confirmed_avg1) + margin)
         .style("stroke", "white")
+
+    svg1.append('text')
+        .attr('x', width + margin)
+        .attr('y', y1(confirmed_avg1) + margin)
+        .attr('dy', -6)
+        .text('average:')
+        .style('font-size', '8')
+        .style('text-anchor', 'start')
+        .style("fill", "white");
+
+    svg1.append('text')
+        .attr('x', width + margin)
+        .attr('y', y1(confirmed_avg1) + margin)
+        .attr('dy', 6)
+        .text(Math.floor(confirmed_avg1))
+        .style('font-size', '8')
+        .style('text-anchor', 'start')
+        .style("fill", "white");
     
     
     // data = await d3.csv("ALL_DATA_filled_organized_2020_AS.csv");
@@ -495,6 +549,24 @@ async function update2(date) {
         .attr("x2", width + margin)
         .attr("y2", y2(confirmed_avg2) + margin)
         .style("stroke", "white")
+
+    svg2.append('text')
+        .attr('x', width + margin)
+        .attr('y', y2(confirmed_avg2) + margin)
+        .attr('dy', -6)
+        .text('average:')
+        .style('font-size', '8')
+        .style('text-anchor', 'start')
+        .style("fill", "white");
+
+    svg2.append('text')
+        .attr('x', width + margin)
+        .attr('y', y2(confirmed_avg2) + margin)
+        .attr('dy', 6)
+        .text(Math.floor(confirmed_avg2))
+        .style('font-size', '8')
+        .style('text-anchor', 'start')
+        .style("fill", "white");
 }
 
 async function update3(date) {
@@ -570,6 +642,24 @@ async function update3(date) {
         .attr("x2", width + margin)
         .attr("y2", y3(confirmed_avg3) + margin)
         .style("stroke", "white")
+
+    svg3.append('text')
+        .attr('x', width + margin)
+        .attr('y', y3(confirmed_avg3) + margin)
+        .attr('dy', -6)
+        .text('average:')
+        .style('font-size', '8')
+        .style('text-anchor', 'start')
+        .style("fill", "white");
+
+    svg3.append('text')
+        .attr('x', width + margin)
+        .attr('y', y3(confirmed_avg3) + margin)
+        .attr('dy', 6)
+        .text(Math.floor(confirmed_avg3))
+        .style('font-size', '8')
+        .style('text-anchor', 'start')
+        .style("fill", "white");
 }
 
 
