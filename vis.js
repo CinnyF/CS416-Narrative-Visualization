@@ -40,7 +40,7 @@ slider3.oninput = function() {
 }
 
 const width = 1100;
-const height = 450;
+const height = 400;
 const margin = 50;
 
 async function init(date) {
@@ -126,6 +126,13 @@ async function init(date) {
             .attr("transform", "translate(-10,10)rotate(-90)")
             .style("text-anchor", "end")
             .style("font-size", 8);
+    
+    svg2.append("text")
+        .attr("class", "x label")
+        .attr("text-anchor", "end")
+        .attr("x", width)
+        .attr("y", height - 6)
+        .text("income per capita, inflation-adjusted (dollars)");
 
     svg2.selectAll(".bar")
         .data(filteredData2)
