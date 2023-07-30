@@ -120,9 +120,9 @@ async function init(date) {
     console.log("-------")
     svg1.append("line")
         .attr("x1", margin)
-        .attr("y1", y1(confirmed_avg1))
+        .attr("y1", height - y1(confirmed_avg1))
         .attr("x2", width / 2 + margin)
-        .attr("y2", y1(confirmed_avg1))
+        .attr("y2", height - y1(confirmed_avg1))
         .style("stroke", "black")
 
 
