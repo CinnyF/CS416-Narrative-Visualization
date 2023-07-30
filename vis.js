@@ -106,7 +106,8 @@ async function init(date) {
         .attr("x", function(d) {return x(d.Province_State) +  margin; })
         .attr("y", function(d) {return y(d.Confirmed);})
         .attr("width", x.bandwidth())
-        .attr("height", function(d) { return height - y(d.Confirmed); });
+        .attr("height", function(d) { return height - y(d.Confirmed); })
+    .attr('transform', 'translate(0,' + (height + margin) + ')');
 }
 
 
