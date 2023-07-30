@@ -9,13 +9,24 @@ slide = (direction) => {
     );
 }
 
+# SLIDER 1
 var slider1 = document.getElementById("myRange1");
 var output1 = document.getElementById("demo1");
 output1.innerHTML = "2020-05-12";
 
 slider1.oninput = function() {
-  output1.innerHTML = calculate_date(this.value);
-  update(calculate_date(this.value));
+  output1.innerHTML = calculate_date1(this.value);
+  update(calculate_date1(this.value));
+}
+
+# SLIDER 2
+var slider2 = document.getElementById("myRange2");
+var output2 = document.getElementById("demo2");
+output2.innerHTML = "2021-01-31";
+
+slider2.oninput = function() {
+  output2.innerHTML = calculate_date2(this.value);
+  update(calculate_date2(this.value));
 }
 
 const width = 1100;
@@ -23,6 +34,7 @@ const height = 450;
 const margin = 50;
 
 async function init(date) {
+    // SCENE 1
     data1 = await d3.csv("ALL_DATA_filled_organized_2020_AS.csv");
     // console.log(data1['Confirmed'])
     const cleanData1 = data1.map((d) => ({
@@ -69,6 +81,51 @@ async function init(date) {
         .attr("y", function(d) {return y1(d.Confirmed);})
         .attr("width", x1.bandwidth())
         .attr("height", function(d) { return height - y1(d.Confirmed); })
+        .attr('transform', 'translate(0,' + margin + ')');
+
+
+    
+    // SCENE 2 -- NOT CHANGED YET
+    data2 = await d3.csv("ALL_DATA_filled_organized_2021_AS.csv");
+    const cleanData2 = data2.map((d) => ({
+        Province_State: d.Province_State,
+        Date: d.Date,
+        Confirmed: +d.Confirmed
+    }));
+    var filteredData2 = cleanData2.filter(function(d) { return d.Date == date; });
+
+    var x2 = d3.scaleBand()
+        .range([0, width])
+        .domain(filteredData2.map(function(d) { return d.Province_State; }))
+        .padding(0.2);
+    
+    var y2 = d3.scaleLinear()
+        .range([height, 0])
+        .domain([0, d3.max(cleanData2, function(d) { return d.Confirmed; })]);
+
+    var svg2 = d3.select("#scene2")
+
+    svg2.append('g')
+       .attr('transform','translate('+margin+','+margin+')')
+       .call(d3.axisLeft(y2).tickFormat(d3.format('~s')));
+
+    svg2.append('g')
+        .attr('transform','translate('+margin+','+(height+margin)+')')
+        .call(d3.axisBottom(x2))
+        .selectAll("text") 
+            .attr("transform", "translate(-10,10)rotate(-90)")
+            .style("text-anchor", "end")
+            .style("font-size", 8);
+
+    svg2.selectAll(".bar")
+        .data(filteredData2)
+        .enter().append("rect")
+        .style("fill", "steelblue")
+        .attr("class", "bar")
+        .attr("x", function(d) {return x2(d.Province_State) +  margin; })
+        .attr("y", function(d) {return y2(d.Confirmed);})
+        .attr("width", x2.bandwidth())
+        .attr("height", function(d) { return height - y2(d.Confirmed); })
         .attr('transform', 'translate(0,' + margin + ')');
 }
 
@@ -132,7 +189,7 @@ async function update(date) {
 
 
 
-function calculate_date(num) {
+function calculate_date1(num) {
   const initial_str = "2020-04-12";
   // const initial_day = initial_str.split('/')[2];
   var res_date;
@@ -201,6 +258,109 @@ function calculate_date(num) {
     }
     else {
       res_date = "2020-12-" + (Number(1) + Number(num) - Number(233)).toString()
+    }
+  }
+  return res_date;
+}
+
+function calculate_date2(num) {
+  const initial_str = "2021-01-31";
+  // const initial_day = initial_str.split('/')[2];
+  var res_date;
+  if (Number(num) >= 0 && Number(num) <= 30) {
+      if ((Number(1) + Number(num) - Number(0)) < 10) {
+          res_date = "2021-01-0" + ((Number(1) + Number(num) - Number(0)).toString()
+      }
+      else {
+          res_date = "2021-01-" + ((Number(1) + Number(num) - Number(0)).toString()
+      }
+  }
+  else if (Number(num) >= 31 && Number(num) <= 58) {
+    if ((Number(1) + Number(num) - Number(31)) < 10) {
+      res_date = "2021-02-0" + (Number(1) + Number(num) - Number(31)).toString()
+    }
+    else {
+      res_date = "2021-02-" + (Number(1) + Number(num) - Number(31)).toString()
+    }
+  }
+  else if (Number(num) >= 59 && Number(num) <= 89) {
+    if ((Number(1) + Number(num) - Number(59)) < 10) {
+      res_date = "2021-03-0" + (Number(1) + Number(num) - Number(59)).toString()
+    }
+    else {
+      res_date = "2021-03-" + (Number(1) + Number(num) - Number(59)).toString()
+    }
+  }
+  else if (Number(num) >= 90 && Number(num) <= 119) {
+    if ((Number(1) + Number(num) - Number(90)) < 10) {
+      res_date = "2021-04-0" + (Number(1) + Number(num) - Number(90)).toString()
+    }
+    else {
+      res_date = "2021-04-" + (Number(1) + Number(num) - Number(90)).toString()
+    }
+  }
+  else if (Number(num) >= 120 && Number(num) <= 150) {
+    if ((Number(1) + Number(num) - Number(120)) < 10) {
+      res_date = "2021-05-0" + (Number(1) + Number(num) - Number(120)).toString()
+    }
+    else {
+      res_date = "2021-05-" + (Number(1) + Number(num) - Number(120)).toString()
+    }
+  }
+  else if (Number(num) >= 151 && Number(num) <= 180) {
+    if ((Number(1) + Number(num) - Number(151)) < 10) {
+      res_date = "2021-06-0" + (Number(1) + Number(num) - Number(151)).toString()
+    }
+    else {
+      res_date = "2021-06-" + (Number(1) + Number(num) - Number(151)).toString()
+    }
+  }
+  else if (Number(num) >= 181 && Number(num) <= 211) {
+    if ((Number(1) + Number(num) - Number(181)) < 10) {
+      res_date = "2021-07-0" + (Number(1) + Number(num) - Number(181)).toString()
+    }
+    else {
+      res_date = "2021-07-" + (Number(1) + Number(num) - Number(181)).toString()
+    }
+  }
+  else if (Number(num) >= 212 && Number(num) <= 242) {
+    if ((Number(1) + Number(num) - Number(212)) < 10) {
+      res_date = "2021-08-0" + (Number(1) + Number(num) - Number(212)).toString()
+    }
+    else {
+      res_date = "2021-08-" + (Number(1) + Number(num) - Number(212)).toString()
+    }
+  }
+  else if (Number(num) >= 243 && Number(num) <= 272) {
+    if ((Number(1) + Number(num) - Number(243)) < 10) {
+      res_date = "2021-09-0" + (Number(1) + Number(num) - Number(243)).toString()
+    }
+    else {
+      res_date = "2021-09-" + (Number(1) + Number(num) - Number(243)).toString()
+    }
+  }
+  else if (Number(num) >= 273 && Number(num) <= 303) {
+    if ((Number(1) + Number(num) - Number(273)) < 10) {
+      res_date = "2021-10-0" + (Number(1) + Number(num) - Number(273)).toString()
+    }
+    else {
+      res_date = "2021-10-" + (Number(1) + Number(num) - Number(273)).toString()
+    }
+  }
+  else if (Number(num) >= 304 && Number(num) <= 333) {
+    if ((Number(1) + Number(num) - Number(304)) < 10) {
+      res_date = "2021-11-0" + (Number(1) + Number(num) - Number(304)).toString()
+    }
+    else {
+      res_date = "2021-11-" + (Number(1) + Number(num) - Number(304)).toString()
+    }
+  }
+  else {
+    if ((Number(1) + Number(num) - Number(334)) < 10) {
+      res_date = "2021-12-0" + (Number(1) + Number(num) - Number(334)).toString()
+    }
+    else {
+      res_date = "2021-12-" + (Number(1) + Number(num) - Number(334)).toString()
     }
   }
   return res_date;
