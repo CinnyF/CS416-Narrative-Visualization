@@ -40,7 +40,7 @@ slider3.oninput = function() {
 }
 
 const width = 1100;
-const height = 400;
+const height = 450;
 const margin = 50;
 
 async function init(date) {
@@ -130,9 +130,18 @@ async function init(date) {
     svg2.append("text")
         .attr("class", "x axis")
         .attr("x", width / 2 )
-        .attr("y",  height + 6)
+        .attr("y",  height - 6)
         .style("text-anchor", "middle")
         .text("State");
+    
+    svg.append("text")
+        .attr("class", "y axis")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0 – margin.left)
+        .attr("x",0 - (height / 2))
+        .attr("dy", "1em")
+        .style("text-anchor", "middle")
+        .text("Number of Cases");
 
     svg2.selectAll(".bar")
         .data(filteredData2)
