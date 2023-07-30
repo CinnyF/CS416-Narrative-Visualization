@@ -126,19 +126,15 @@ async function init(date) {
         .attr("x2", width + margin)
         .attr("y2", y1(confirmed_avg1) + margin)
         .style("stroke", "white")
-    svg1.append('rect')
-    .attr('x', 0)
-    .attr('y', y1(confirmed_avg1))
-    .attr('width', width)
-    .attr('height', 2)
-    .style('fill', 'black');
-
+    
     svg1.append('text')
-        .attr('x', width / 2)
-        .attr('y', y1(confirmed_avg1) - 5)
-        .text('average')
-        .style('font-size', '12px')
-        .style('text-anchor', 'middle');
+        .attr('x', width + margin)
+        .attr('y', y1(confirmed_avg1) + margin)
+        // .text('average:')
+        .text(function(d) { return 'average: ' + '\n' + confirmed_avg1 + '\n' + 'cases' })
+        .style('font-size', '12')
+        .style('text-anchor', 'start')
+        .style("fill", "white");
 
 
     
