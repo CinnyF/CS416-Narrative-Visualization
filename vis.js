@@ -24,14 +24,14 @@ const margin = 50;
 
 async function init(date) {
     data = await d3.csv("ALL_DATA_filled_organized_2020_AS.csv");
-    console.log(data['Confirmed'])
+    // console.log(data['Confirmed'])
     const cleanData = data.map((d) => ({
         Province_State: d.Province_State,
         Date: d.Date,
         Confirmed: +d.Confirmed
     }));
     var filteredData = cleanData.filter(function(d) { return d.Date == date; });
-    console.log(filteredData)
+    // console.log(filteredData)
 
     var x = d3.scaleBand()
         .range([0, width])
@@ -40,7 +40,8 @@ async function init(date) {
     
     var y = d3.scaleLinear()
         .range([height, 0])
-        .domain([0, d3.max(filteredData, function(d) { return d.Confirmed; })]);
+        .domain([0, d3.max(cleanData, function(d) { return d.Confirmed; })]);
+        // .domain([0, d3.max(filteredData, function(d) { return d.Confirmed; })]);
     // console.log(d3.max(filteredData, function(d) { return d.Confirmed; }))
     
     var svg = d3.select("#scene1")
@@ -76,7 +77,7 @@ async function update(date) {
     d3.select("#scene1").selectAll("*").remove()
     
     data = await d3.csv("ALL_DATA_filled_organized_2020_AS.csv");
-    console.log(data['Confirmed'])
+    // console.log(data['Confirmed'])
     const cleanData = data.map((d) => ({
         Province_State: d.Province_State,
         Date: d.Date,
