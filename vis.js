@@ -55,7 +55,7 @@ async function init(date) {
         Date: d.Date,
         Confirmed: +d.Confirmed
     }));
-    var filteredData = cleanData.filter(function(d) { return d.Date == '05-12-2020'; });
+    var filteredData = cleanData.filter(function(d) { return d.Date == '08-18-2020'; });
     console.log(filteredData)
 
     var x = d3.scaleBand()
