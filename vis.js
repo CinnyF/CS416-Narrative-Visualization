@@ -107,7 +107,7 @@ async function init(date) {
         .attr("y", function(d) {return y(d.Confirmed);})
         .attr("width", x.bandwidth())
         .attr("height", function(d) { return height - y(d.Confirmed); })
-    .attr('transform', 'translate(0,' + (height + margin) + ')');
+    .attr('transform', 'translate(0,' + margin + ')');
 }
 
 
