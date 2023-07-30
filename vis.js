@@ -119,9 +119,9 @@ async function init(date) {
     // console.log(y1(confirmed_avg1))
     // console.log("-------")
     svg1.append("line")
-        .attr("x1", 0)
+        .attr("x1", 0 + margin)
         .attr("y1", y1(confirmed_avg1) + margin)
-        .attr("x2", width + margin * 2)
+        .attr("x2", width + margin)
         .attr("y2", y1(confirmed_avg1) + margin)
         .style("stroke", "black")
 
@@ -190,9 +190,9 @@ async function init(date) {
 
     var confirmed_avg2 = d3.mean(cleanData2, function(d) { return d.Confirmed; });
     svg2.append("line")
-        .attr("x1", 0)
+        .attr("x1", 0 + margin)
         .attr("y1", y1(confirmed_avg2) + margin)
-        .attr("x2", width + margin * 2)
+        .attr("x2", width + margin)
         .attr("y2", y1(confirmed_avg2) + margin)
         .style("stroke", "black")
     
@@ -261,9 +261,9 @@ async function init(date) {
 
     var confirmed_avg3 = d3.mean(cleanData3, function(d) { return d.Confirmed; });
     svg3.append("line")
-        .attr("x1", 0)
+        .attr("x1", 0 + margin)
         .attr("y1", y1(confirmed_avg3) + margin)
-        .attr("x2", width + margin * 2)
+        .attr("x2", width + margin)
         .attr("y2", y1(confirmed_avg3) + margin)
         .style("stroke", "black")
 }
@@ -340,9 +340,9 @@ async function update1(date) {
 
     var confirmed_avg1 = d3.mean(cleanData1, function(d) { return d.Confirmed; });
     svg1.append("line")
-        .attr("x1", 0)
+        .attr("x1", 0 + margin)
         .attr("y1", y1(confirmed_avg1) + margin)
-        .attr("x2", width + margin * 2)
+        .attr("x2", width + margin)
         .attr("y2", y1(confirmed_avg1) + margin)
         .style("stroke", "black")
     
@@ -462,9 +462,9 @@ async function update2(date) {
 
     var confirmed_avg2 = d3.mean(cleanData2, function(d) { return d.Confirmed; });
     svg2.append("line")
-        .attr("x1", 0)
+        .attr("x1", 0 + margin)
         .attr("y1", y1(confirmed_avg2) + margin)
-        .attr("x2", width + margin * 2)
+        .attr("x2", width + margin)
         .attr("y2", y1(confirmed_avg2) + margin)
         .style("stroke", "black")
 }
@@ -535,9 +535,9 @@ async function update3(date) {
 
     var confirmed_avg3 = d3.mean(cleanData3, function(d) { return d.Confirmed; });
     svg3.append("line")
-        .attr("x1", 0)
+        .attr("x1", 0 + margin)
         .attr("y1", y1(confirmed_avg3) + margin)
-        .attr("x2", width + margin * 2)
+        .attr("x2", width + margin)
         .attr("y2", y1(confirmed_avg3) + margin)
         .style("stroke", "black")
 }
