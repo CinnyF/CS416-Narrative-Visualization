@@ -129,19 +129,19 @@ async function init(date) {
     
     svg2.append("text")
         .attr("class", "x axis")
-        .attr("x", width / 2 )
-        .attr("y",  height + margin + 100)
-        .style("font-size", 10)
+        .attr("x", width / 2 + margin / 2 )
+        .attr("y",  height + margin + 130)
+        .style("font-size", 13)
         .style("text-anchor", "middle")
         .text("State");
     
     svg2.append("text")
         .attr("class", "y axis")
         .attr("transform", "rotate(-90)")
-        // .attr("y", 10)
+        .attr("y", 10)
         .attr("x", 0 - (height / 2))
-        .attr("dy", "2em")
-        .style("font-size", 10)
+        // .attr("dy", "2em")
+        .style("font-size", 13)
         .style("text-anchor", "middle")
         .text("Number of Cases");
 
