@@ -9,7 +9,7 @@ slide = (direction) => {
     );
 }
 
-# SLIDER 1
+// SLIDER 1
 var slider1 = document.getElementById("myRange1");
 var output1 = document.getElementById("demo1");
 output1.innerHTML = "2020-05-12";
@@ -19,7 +19,7 @@ slider1.oninput = function() {
   update(calculate_date1(this.value));
 }
 
-# SLIDER 2
+// SLIDER 2
 var slider2 = document.getElementById("myRange2");
 var output2 = document.getElementById("demo2");
 output2.innerHTML = "2021-01-31";
