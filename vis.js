@@ -161,15 +161,15 @@ async function init(date) {
         .domain(filteredData2.map(function(d) { return d.Province_State; }))
         .padding(0.2);
     
-    var y2 = d3.scaleLinear()
+    var y2 = d3.scaleLog()
         .range([height, 0])
-        .domain([0, d3.max(cleanData2, function(d) { return d.Confirmed; })]);
+        .domain([10, 1000000000]);
 
     var svg2 = d3.select("#scene2")
 
     svg2.append('g')
        .attr('transform','translate('+margin+','+margin+')')
-       .call(d3.axisLeft(y2).tickFormat(d3.format('~s')));
+       .call(d3.axisLeft(y2).tickValues([10,100,1000,10000,100000,1000000, 10000000, 100000000, 1000000000]).tickFormat(d3.format('~s')));
 
     svg2.append('g')
         .attr('transform','translate('+margin+','+(height+margin)+')')
@@ -252,15 +252,15 @@ async function init(date) {
         .domain(filteredData3.map(function(d) { return d.Province_State; }))
         .padding(0.2);
     
-    var y3 = d3.scaleLinear()
+    var y3 = d3.scaleLog()
         .range([height, 0])
-        .domain([0, d3.max(cleanData3, function(d) { return d.Confirmed; })]);
+        .domain([10, 1000000000]);
 
     var svg3 = d3.select("#scene3")
 
     svg3.append('g')
        .attr('transform','translate('+margin+','+margin+')')
-       .call(d3.axisLeft(y3).tickFormat(d3.format('~s')));
+       .call(d3.axisLeft(y3).tickValues([10,100,1000,10000,100000,1000000, 10000000, 100000000, 1000000000]).tickFormat(d3.format('~s')));
 
     svg3.append('g')
         .attr('transform','translate('+margin+','+(height+margin)+')')
