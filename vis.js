@@ -62,7 +62,7 @@ async function init(date) {
     
     var y1 = d3.scaleLog()
         .range([height, 0])
-        .domain([10, 1000000000]);
+        .domain([10, 100000000]);
     // .domain([0, d3.max(filteredData, function(d) { return d.Confirmed; })]);
     // console.log(d3.max(filteredData, function(d) { return d.Confirmed; }))
 
@@ -72,7 +72,7 @@ async function init(date) {
 
     svg1.append('g')
        .attr('transform','translate('+margin+','+margin+')')
-       .call(d3.axisLeft(y1).tickValues([10,100,1000,10000,100000,1000000, 10000000, 100000000, 1000000000]).tickFormat(d3.format('~s')));
+       .call(d3.axisLeft(y1).tickValues([10,100,1000,10000,100000,1000000, 10000000, 100000000, 100000000]).tickFormat(d3.format('~s')));
 
     svg1.append('g')
         .attr('transform','translate('+margin+','+(height+margin)+')')
@@ -163,13 +163,13 @@ async function init(date) {
     
     var y2 = d3.scaleLog()
         .range([height, 0])
-        .domain([10, 1000000000]);
+        .domain([10, 100000000]);
 
     var svg2 = d3.select("#scene2")
 
     svg2.append('g')
        .attr('transform','translate('+margin+','+margin+')')
-       .call(d3.axisLeft(y2).tickValues([10,100,1000,10000,100000,1000000, 10000000, 100000000, 1000000000]).tickFormat(d3.format('~s')));
+       .call(d3.axisLeft(y2).tickValues([10,100,1000,10000,100000,1000000, 10000000, 100000000]).tickFormat(d3.format('~s')));
 
     svg2.append('g')
         .attr('transform','translate('+margin+','+(height+margin)+')')
@@ -254,13 +254,13 @@ async function init(date) {
     
     var y3 = d3.scaleLog()
         .range([height, 0])
-        .domain([10, 1000000000]);
+        .domain([10, 100000000]);
 
     var svg3 = d3.select("#scene3")
 
     svg3.append('g')
        .attr('transform','translate('+margin+','+margin+')')
-       .call(d3.axisLeft(y3).tickValues([10,100,1000,10000,100000,1000000, 10000000, 100000000, 1000000000]).tickFormat(d3.format('~s')));
+       .call(d3.axisLeft(y3).tickValues([10,100,1000,10000,100000,1000000, 10000000, 100000000]).tickFormat(d3.format('~s')));
 
     svg3.append('g')
         .attr('transform','translate('+margin+','+(height+margin)+')')
