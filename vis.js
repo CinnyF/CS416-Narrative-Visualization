@@ -62,7 +62,7 @@ async function init(date) {
     
     var y1 = d3.scaleLog()
         .range([height, 0])
-        .domain([0, d3.max(cleanData1, function(d) { return d.Confirmed; })]);
+        .domain([10, 1000000000)]);
     // .domain([0, d3.max(filteredData, function(d) { return d.Confirmed; })]);
     // console.log(d3.max(filteredData, function(d) { return d.Confirmed; }))
 
