@@ -72,7 +72,7 @@ async function init(date) {
 
     svg1.append('g')
        .attr('transform','translate('+margin+','+margin+')')
-       .call(d3.axisLeft(y1)
+       .call(d3.axisLeft(y1))
        .tickValues([10,100,1000,10000,100000,1000000, 10000000, 100000000, 1000000000]).tickFormat(d3.format('~s'));
 
     svg1.append('g')
