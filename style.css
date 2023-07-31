@@ -61,6 +61,10 @@ button:hover{
   background-color: #C23C31;
 }
 
+head {
+    background: #C23C31;
+}
+
 h1 {
     color: #111;
     font-family: impact;
