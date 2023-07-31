@@ -60,7 +60,7 @@ async function init(date) {
         .domain(filteredData1.map(function(d) { return d.Province_State; }))
         .padding(0.2);
     
-    var y1 = d3.scaleLinear()
+    var y1 = d3.scaleLog()
         .range([height, 0])
         .domain([0, d3.max(cleanData1, function(d) { return d.Confirmed; })]);
     // .domain([0, d3.max(filteredData, function(d) { return d.Confirmed; })]);
