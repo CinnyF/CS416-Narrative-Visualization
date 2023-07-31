@@ -104,6 +104,8 @@ h3 {
     background: #C23C31;
     color: white;
     padding: 10px;
+    width: 1200px;
+    margin: auto;
 }
 
 .slidecontainer {
