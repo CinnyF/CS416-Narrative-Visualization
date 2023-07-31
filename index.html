@@ -15,8 +15,12 @@
     <div>
       <div>
         <p>
-          COVID-19 Cases in the United States!<br>
-          COVID-19 Cases in the United States!<br>
+<!--           COVID-19 Cases in the United States!<br>
+          COVID-19 Cases in the United States!<br> -->
+
+          In this narrative visualization, the number of confirmed cases of COVID-19 in the United States for each day during the period from 2020 to 2022 is visualized. To explore more information, feel free to slide the date slider below to set the specific date of the bar chart and use the previous/next buttons at the bottom to control the year. <br>
+          For each day, please note that x-axis only contains states that the statistics are available. And, the y-axis for all bar charts (either within the same year or across different year) are uniform and processed by the logarithm. <br>
+
         </p >
       </div>
     </div>
@@ -34,7 +38,7 @@
           <input type="range" min=0 max=263 value=109 class="slider" id="myRange1">
           <p>Date: <span id="demo1"></span></p>
         </div>
-        <svg id="scene1" width=1200 height=1500 style="border:solid;">
+        <svg id="scene1" width=1200 height=1500 style="border:hidden;">
         </svg>
         <div>
           <button onClick="slide('next')">Next</button>
@@ -49,7 +53,7 @@
           <input type="range" min=0 max=364 value=210 class="slider" id="myRange2">
           <p>Date: <span id="demo2"></span></p>
         </div>
-        <svg id="scene2" width=1200 height=1500 style="border:solid;">
+        <svg id="scene2" width=1200 height=1500 style="border:hidden;">
         </svg>
         <div>
           <button onClick="slide('prev')">Previous</button>
@@ -65,7 +69,7 @@
           <input type="range" min=0 max=364 value=210 class="slider" id="myRange3">
           <p>Date: <span id="demo3"></span></p>
         </div>
-        <svg id="scene3" width=1200 height=1500 style="border:solid;">
+        <svg id="scene3" width=1200 height=1500 style="border:hidden;">
         </svg>
         <div>
           <button onClick="slide('prev')">Previous</button>
